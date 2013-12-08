@@ -1,6 +1,6 @@
 [submodule ".config/awesome/daze"]
-    path = .config/awesome/daze
-    url = https://github.com/speccy/daze.git
+        path = .config/awesome/daze
+        url = https://github.com/speccy/daze.git
 [submodule ".config/awesome/vicious"]
-    path = .config/awesome/vicious
-    url = http://git.sysphere.org/vicious
+	path = .config/awesome/vicious
+	url = http://git.sysphere.org/vicious
