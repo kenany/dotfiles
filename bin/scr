@@ -1,0 +1,17 @@
+#!/bin/bash
+
+name=`date '+%Y-%m-%d-%R'`
+place=$HOME/Pictures/Screenshots
+
+scrot -d1 $HOME/kenan.png
+pngquant $HOME/kenan.png
+
+original=`wc -c < kenan.png`
+new=`wc -c < kenan-fs8.png`
+echo "$original bytes compressed down to $new"
+
+improvement=`echo "$new * 100 / $original" | bc`
+echo "($improvement% of the original size)"
+
+cp kenan-fs8.png $place/$name.png
+rm $HOME/kenan*.png
