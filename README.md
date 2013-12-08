@@ -2,6 +2,8 @@
 
 My dotfiles for an ArchLinux system.
 
+![screenshot](https://f.cloud.github.com/assets/733364/1701209/0dfcb9c2-6048-11e3-9366-b7f69ecf5005.png)
+
 ## Installation
 
 Frankly, you shouldn't use these as they are. They are tailored specifically for
