@@ -1,0 +1,63 @@
+! Fonts
+*.font: xft:Source Code Pro:size=10:antialias=true:hinting=true
+*.boldFont: xft:Source Code Pro:bold:size=10:antialias=true:hinting=true
+*.italicFont: xft:Source Code Pro:italic:size=10:antialias=true:hinting=true
+*.boldItalicFont: xft:Source Code Pro:bolditalic:size=10:antialias=true:hinting=true
+
+! rxvt-unicode
+URxvt*termName:rxvt-256color
+URxvt*geometry: 120x44
+URxvt*resource: $HOME/.Xresources
+URxvt*iconName: urxvt
+hold: false
+
+! urxvt specific colors
+URxvt*depth: 32
+URxvt*buffered: true
+URxvt*intensityStyles: true
+URxvt*colorBD: 11
+URxvt*colorIT: 13
+URxvt*colorUL: 12
+!URxvt*underlineColor: 12
+!URxvt*fading: 0
+!URxvt*fadeColor: 0
+
+! Cursor
+URxvt*cursorColor: 10
+URxvt*cursorColor2: 0
+URxvt*cursorBlink: false
+URxvt*cursorUnderline: false
+
+! Border
+URxvt*borderColor: 0
+URxvt*internalBorder: 0
+URxvt*externalBorder: 0
+URxvt*borderLess: false
+
+! Frack the fracking bell
+URxvt*urgentOnBell: false
+URxvt*visualBell: false
+URxvt*loginShell: true
+URxvt*utmpInhibit: false
+
+! Scrolling
+! Only scroll in gnu-screen
+URxvt*saveLines: 0
+URxvt*jumpScroll: true
+URxvt*skipScroll: true
+
+! ScrollBar Thinkness in pixels
+URxvt*thickness: 0
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*scrollTtyKeypress: true
+
+! Tabs with names
+URxvt*tabbed.new-button: false
+URxvt*tabbed.title: false
+URxvt*tabbed.tabbar-fg: 7
+URxvt*tabbed.tabbar-bg: 8
+URxvt*tabbed.tab-fg: 8
+URxvt*tabbed.tab-bg: 7
