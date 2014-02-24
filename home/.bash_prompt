@@ -64,5 +64,5 @@ function prompt_command() {
     echo -ne "\033]0;$title"; echo -ne "\007"
 }
 
-# Show awesome prompt only if Git is istalled
+# Show awesome prompt only if Git is installed
 command -v git >/dev/null 2>&1 && PROMPT_COMMAND=prompt_command
