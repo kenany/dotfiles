@@ -34,25 +34,21 @@ URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 URxvt*borderLess: false
 
-! Frack the fracking bell
-URxvt*urgentOnBell: false
-URxvt*visualBell: false
-URxvt*loginShell: true
-URxvt*utmpInhibit: false
+! Scrollbar style
+URxvt*scrollstyle: plain
 
-! Scrolling
-! Only scroll in gnu-screen
-URxvt*saveLines: 0
-URxvt*jumpScroll: true
-URxvt*skipScroll: true
-
-! ScrollBar Thinkness in pixels
-URxvt*thickness: 0
-URxvt*scrollBar: false
-URxvt*scrollBar_right: false
+! Do not scroll with output
 URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: false
+
+! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! Scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
+URxvt*mousewheel: true
+
+! Perl
+URxvt*perl-ext-common: default,vtwheel
 
 ! Tabs with names
 URxvt*tabbed.new-button: false
@@ -61,3 +57,6 @@ URxvt*tabbed.tabbar-fg: 7
 URxvt*tabbed.tabbar-bg: 8
 URxvt*tabbed.tab-fg: 8
 URxvt*tabbed.tab-bg: 7
+
+! Remove weird behavior when pressing ctrl-shift
+URxvt*iso14755: false

@@ -63,7 +63,7 @@ end
 -- {{{ Variable definitions
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xfce4-terminal"
+terminal = os.getenv("TERM") or "xfce4-terminal"
 browser = os.getenv("BROWSER") or "chromium"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
