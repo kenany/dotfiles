@@ -12,6 +12,8 @@ URxvt*iconName: urxvt
 hold: false
 
 ! urxvt specific colors
+urxvt*background: black
+urxvt*foreground: #F8F5F0
 URxvt*depth: 32
 URxvt*buffered: true
 URxvt*intensityStyles: true
