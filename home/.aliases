@@ -36,3 +36,5 @@ alias week='date +%V'
 alias update='sudo pacman -Syu; npm update -g npm; npm update -g'
 
 alias screenshot='import ~/Pictures/Screenshots/$(date +%F_%H%M%S_%N).png'
+
+alias n='N_PREFIX=$HOME/bin n'
