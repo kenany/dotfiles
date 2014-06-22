@@ -40,7 +40,7 @@ function prompt_command() {
     local user_prompt=
     [ "$USER" != "$local_username" ] && user_prompt="$user_color$USER$NOCOLOR"
 
-    # Show hostname inside SSH session
+    # Hostname
     local host_prompt=
     host_prompt="@$YELLOW$HOSTNAME$NOCOLOR"
 
