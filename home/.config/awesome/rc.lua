@@ -161,7 +161,7 @@ menubar.utils.terminal = terminal
 -- {{{ Wibox
 
 -- Create a textclock widget.
-mytextclock = awful.widget.textclock("   %I:%M - %a, %b %d ")
+mytextclock = awful.widget.textclock("   %I:%M %p - %Y-%m-%d (%A) ")
 daze.widgets.calendar.register(mytextclock)
 
 -- Create a wibox for each screen and add it.
