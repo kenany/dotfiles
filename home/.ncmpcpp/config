@@ -7,8 +7,8 @@ tag_editor_album_format = "{%a} - {%b}"
 alternative_header_first_line_format = "{$b$1%t$9$/b}"
 alternative_header_second_line_format ="$0{%a} $b$8-$9$/b {%b}$9"
 
-now_playing_prefix = "$u$2"
-now_playing_suffix = "$2$/u$2"
+now_playing_prefix = "$b"
+now_playing_suffix = "$/b"
 
 song_columns_list_format = "(10)[black]{l} (30)[blue]{a} (30)[green]{b} (30)[magenta]{t}"
 
