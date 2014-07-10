@@ -1,0 +1,41 @@
+message_delay_time = "3"
+
+song_list_format = "{$5%a} $2»$8»$5» {$8%t}|{$8%f}$R{$2%b}"
+song_status_format = "{$8%a} $2»$8»$5» $b{$1%b}$/b"
+tag_editor_album_format = "{%a} - {%b}"
+
+alternative_header_first_line_format = "{$b$1%t$9$/b}"
+alternative_header_second_line_format ="$0{%a} $b$8-$9$/b {%b}$9"
+
+now_playing_prefix = "$u$2"
+now_playing_suffix = "$2$/u$2"
+
+song_columns_list_format = "(10)[black]{l} (30)[blue]{a} (30)[green]{b} (30)[magenta]{t}"
+
+autocenter_mode = "yes"
+
+progressbar_look = "━━╸"
+header_visibility = "no"
+titles_visibility = "no"
+lines_scrolled = "5"
+
+clock_display_seconds = "yes"
+display_bitrate = "yes"
+
+ignore_leading_the = "yes"
+enable_window_title = "no"
+
+external_editor = "subl3"
+
+empty_tag_color = "white"
+header_window_color = "white"
+volume_color = "blue"
+state_line_color = "white"
+state_flags_color = "white"
+main_window_color = "blue"
+main_window_highlight_color = "white"
+progressbar_color = "black"
+progressbar_elapsed_color = "cyan"
+statusbar_color = "red"
+alternative_ui_separator_color = "white"
+active_column_color = "white"
