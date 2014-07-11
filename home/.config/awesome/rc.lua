@@ -1,33 +1,29 @@
--- Standard awesome library
 local gears = require("gears")
-awful = require("awful")
-awful.rules = require("awful.rules")
-require("awful.autofocus")
 
--- Widget and layout library
+-- Widgets
 local wibox = require("wibox")
-local daze = require("daze")
 local vicious = require("vicious")
+local daze = require("daze")
+local awful = require("awful")
+awful.rules = require("awful.rules")
+awful.autofocus = require("awful.autofocus")
 
 local layouts = require("layouts")
 
--- Theme handling library
+-- Theme handling
 --
 -- Not a local variable because layouts need to access this.
 beautiful = require("beautiful")
 
--- Notification library
+-- Notifications
 local naughty = require("naughty")
 local menubar = require("menubar")
-
-
 
 -- Set locale
 os.setlocale("en_US.UTF-8")
 
-
-
--- {{{ Error handling
+-- Error handling
+--
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (this code will only ever execute for the fallback config).
 if awesome.startup_errors then
@@ -41,10 +37,13 @@ end
 -- Handle runtime errors after startup
 do
   local in_error = false
-  awesome.connect_signal("debug::error", function (err)
+  awesome.connect_signal("debug::error", function(err)
 
     -- Make sure we don't go into an endless error loop
-    if in_error then return end
+    if in_error then
+      return
+    end
+
     in_error = true
 
     naughty.notify({
@@ -56,11 +55,6 @@ do
     in_error = false
   end)
 end
--- }}}
-
-
-
--- {{{ Variable definitions
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -68,7 +62,7 @@ browser = os.getenv("BROWSER") or "chromium"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
--- Default modkey.
+-- Default modkey
 --
 -- Usually, Mod4 is the key with a logo between Control and Alt. If you do not
 -- like this or do not have such a key, I suggest you to remap Mod4 to another
@@ -85,104 +79,78 @@ local layouts = {
 
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/kenan/.config/awesome/theme.lua")
--- }}}
 
-
-
--- {{{ Wallpaper
+-- Wallpaper
 if beautiful.wallpaper then
   for s = 1, screen.count() do
     gears.wallpaper.maximized(beautiful.wallpaper, s, true)
   end
 end
--- }}}
 
-
-
--- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {
-  names = { " ⠐ ", " ⠡ ", " ⠪ ", " ⠵ ", " ⠻ "},
-  layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+local tags = {
+  names = {" ⠐ ", " ⠡ ", " ⠪ ", " ⠵ ", " ⠻ "},
+  layout = {layouts[2], layouts[2], layouts[2], layouts[2], layouts[2]}
 }
+
 for s = 1, screen.count() do
 
   -- Each screen has its own tag table.
   tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 
--- awful.layout.set(daze.layout.tile, tags[1][1])
--- awful.tag.setmwfact(0.558, tags[1][1])
--- awful.tag.setncol(1, tags[1][1])
--- }}}
-
-
-
--- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-  { "manual", terminal .. " -e man awesome" },
-  { "edit config", editor_cmd .. " " .. awesome.conffile },
-  { "restart", awesome.restart },
-  { "quit", awesome.quit }
+local myawesomemenu = {
+  {"manual", terminal .. " -e man awesome"},
+  {"edit config", editor_cmd .. " " .. awesome.conffile},
+  {"restart", awesome.restart },
+  {"quit", awesome.quit}
 }
 
-mymainmenu = awful.menu({
+local mymainmenu = awful.menu({
   items = {
-    {
-      "awesome",
-      myawesomemenu,
-      beautiful.awesome_icon
-    },
-    {
-      "terminal",
-      terminal
-    },
-    {
-      "chromium",
-      browser
-    }
+    {"awesome", myawesomemenu, beautiful.awesome_icon},
+    {"terminal", terminal},
+    {"chromium", browser}
   }
 })
 
-mylauncher = awful.widget.launcher({
+local mylauncher = awful.widget.launcher({
   image = beautiful.awesome_icon,
   menu = mymainmenu
 })
 
--- Menubar configuration
-
 -- Set the terminal for applications that require it.
 menubar.utils.terminal = terminal
--- }}}
 
+-- Widget separators
+separator = wibox.widget.textbox()
+separator.text = "<span color=\"#A9D7F2\"> || </span>"
+space = wibox.widget.textbox()
+space.text = "  "
 
-
--- {{{ Wibox
-
-
--- OS
+-- OS info widget
 sys = wibox.widget.textbox()
 vicious.register(sys, vicious.widgets.os, "$1 $2")
 
--- MPD
+-- MPD now playing widget
 mpdwidget = wibox.widget.textbox()
 vicious.register(mpdwidget, vicious.widgets.mpd,
   function(widget, args)
     if args["{state}"] == "Stop" then
       return " - "
     else
-      return args["{Artist}"]..' - '.. args["{Title}"]
+      return args["{Artist}"] .. ' - ' .. args["{Title}"]
     end
  end,
  10
 )
 
--- Create a textclock widget.
+-- Date + clock widget
 mytextclock = awful.widget.textclock("   %I:%M %p - %Y-%m-%d (%A) ")
 daze.widgets.calendar.register(mytextclock)
 
--- Create a wibox for each screen and add it.
+-- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
@@ -225,12 +193,16 @@ mytasklist.buttons = awful.util.table.join(
 
   awful.button({}, 4, function()
     awful.client.focus.byidx(1)
-    if client.focus then client.focus:raise() end
+    if client.focus then
+      client.focus:raise()
+    end
   end),
 
   awful.button({}, 5, function()
     awful.client.focus.byidx(-1)
-    if client.focus then client.focus:raise() end
+    if client.focus then
+      client.focus:raise()
+    end
   end)
 )
 
@@ -284,6 +256,8 @@ for s = 1, screen.count() do
   -- Widgets that are aligned to the left.
   local left_layout = wibox.layout.fixed.horizontal()
   left_layout:add(sys)
+  left_layout:add(space)
+  left_layout:add(separator)
 
   -- Widgets that are aligned to the right.
   local right_layout = wibox.layout.fixed.horizontal()
@@ -296,47 +270,41 @@ for s = 1, screen.count() do
 
   mywibox[s]:set_widget(layout)
 end
--- }}}
 
-
-
--- {{{ Mouse bindings
+-- Mouse bindings
 root.buttons(awful.util.table.join(
-  awful.button({}, 3, function () mymainmenu:toggle() end),
+  awful.button({}, 3, function() mymainmenu:toggle() end),
   awful.button({}, 4, awful.tag.viewnext),
   awful.button({}, 5, awful.tag.viewprev)
 ))
--- }}}
 
+-- Key bindings
+local globalkeys = awful.util.table.join(
+  awful.key({modkey}, "Left", awful.tag.viewprev),
+  awful.key({modkey}, "Right", awful.tag.viewnext),
+  awful.key({modkey}, "Escape", awful.tag.history.restore),
 
-
--- {{{ Key bindings
-globalkeys = awful.util.table.join(
-  awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
-  awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
-  awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
-
-  awful.key({ modkey,           }, "j",
-    function ()
-      awful.client.focus.byidx( 1)
+  awful.key({modkey}, "j",
+    function()
+      awful.client.focus.byidx(1)
       if client.focus then client.focus:raise() end
     end),
-  awful.key({ modkey,           }, "k",
-    function ()
+  awful.key({modkey}, "k",
+    function()
       awful.client.focus.byidx(-1)
       if client.focus then client.focus:raise() end
     end),
 
-  awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
+  awful.key({modkey}, "w", function() mymainmenu:show() end),
 
   -- Layout manipulation
-  awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
-  awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
-  awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
-  awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
+  awful.key({ modkey, "Shift"   }, "j", function() awful.client.swap.byidx(1) end),
+  awful.key({ modkey, "Shift"   }, "k", function() awful.client.swap.byidx(-1) end),
+  awful.key({ modkey, "Control" }, "j", function() awful.screen.focus_relative( 1) end),
+  awful.key({ modkey, "Control" }, "k", function() awful.screen.focus_relative(-1) end),
   awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
   awful.key({ modkey,           }, "Tab",
-    function ()
+    function()
       awful.client.focus.history.previous()
       if client.focus then
         client.focus:raise()
