@@ -161,9 +161,22 @@ menubar.utils.terminal = terminal
 -- {{{ Wibox
 
 
--- OS.
+-- OS
 sys = wibox.widget.textbox()
 vicious.register(sys, vicious.widgets.os, "$1 $2")
+
+-- MPD
+mpdwidget = wibox.widget.textbox()
+vicious.register(mpdwidget, vicious.widgets.mpd,
+  function(widget, args)
+    if args["{state}"] == "Stop" then
+      return " - "
+    else
+      return args["{Artist}"]..' - '.. args["{Title}"]
+    end
+ end,
+ 10
+)
 
 -- Create a textclock widget.
 mytextclock = awful.widget.textclock("   %I:%M %p - %Y-%m-%d (%A) ")
@@ -272,9 +285,14 @@ for s = 1, screen.count() do
   local left_layout = wibox.layout.fixed.horizontal()
   left_layout:add(sys)
 
+  -- Widgets that are aligned to the right.
+  local right_layout = wibox.layout.fixed.horizontal()
+  right_layout:add(mpdwidget)
+
   -- Now bring it all together.
   local layout = wibox.layout.align.horizontal()
   layout:set_left(left_layout)
+  layout:set_right(right_layout)
 
   mywibox[s]:set_widget(layout)
 end
