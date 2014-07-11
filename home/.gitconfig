@@ -4,7 +4,7 @@
     tags = tag -l
     branches = branch -a
     remotes = remote -v
-	up = "!git remote update -p; git merge --ff-only @{u}"
+    up = "!git remote update -p; git merge --ff-only @{u}"
 
 [apply]
     # Detect whitespace errors when applying a patch
