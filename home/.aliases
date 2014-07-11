@@ -32,9 +32,6 @@ alias gurl='curl --compressed'
 # Get week number
 alias week='date +%V'
 
-# Update system packages, npm, and globally installed npm modules.
-alias update='sudo pacman -Syu; npm update -g npm; npm update -g'
-
 alias screenshot='import ~/Pictures/Screenshots/$(date +%F_%H%M%S_%N).png'
 
 alias n='N_PREFIX=$HOME/bin n'
