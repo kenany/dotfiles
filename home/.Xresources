@@ -72,25 +72,25 @@ URxvt*iso14755: false
 *color9: #D23D3D
 
 ! Green
-*color2:     #B8D68C
-*color10:    #A0CF5D
+*color2: #B8D68C
+*color10: #A0CF5D
 
 ! Yellow
-*color3:     #E1AA5D
-*color11:    #F39D21
+*color3: #E1AA5D
+*color11: #F39D21
 
 ! Blue
-*color4:     #7DC1CF
-*color12:    #4E9FB1
+*color4: #7DC1CF
+*color12: #4E9FB1
 
 ! Magenta
-*color5:     #9B64FB
-*color13:    #8542FF
+*color5: #9B64FB
+*color13: #8542FF
 
 ! Cyan
-*color6:     #6D878D
-*color14:    #42717B
+*color6: #6D878D
+*color14: #42717B
 
 ! White
-*color7:     #dddddd
-*color15:    #dddddd
+*color7: #dddddd
+*color15: #dddddd
