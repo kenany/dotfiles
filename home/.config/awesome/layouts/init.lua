@@ -1,4 +1,5 @@
-local layouts = { _NAME = "layouts" }
+local layouts = {_NAME = "layouts"}
+
 return setmetatable(layouts, {
   __index = function(table, key)
     local module = rawget(table, key)

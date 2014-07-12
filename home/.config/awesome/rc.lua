@@ -398,20 +398,21 @@ for i = 1, 9 do
               awful.client.movetotag(tag)
          end
       end),
-    awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-      function ()
-          local tag = awful.tag.gettags(client.focus.screen)[i]
-          if client.focus and tag then
-              awful.client.toggletag(tag)
-          end
-      end)
+    awful.key({modkey, "Control", "Shift"}, "#" .. i + 9,
+      function()
+        local tag = awful.tag.gettags(client.focus.screen)[i]
+        if client.focus and tag then
+          awful.client.toggletag(tag)
+        end
+      end
+    )
   )
 end
 
-clientbuttons = awful.util.table.join(
-  awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-  awful.button({ modkey }, 1, awful.mouse.client.move),
-  awful.button({ modkey }, 3, awful.mouse.client.resize)
+local clientbuttons = awful.util.table.join(
+  awful.button({}, 1, function(c) client.focus = c; c:raise() end),
+  awful.button({modkey}, 1, awful.mouse.client.move),
+  awful.button({modkey}, 3, awful.mouse.client.resize)
 )
 
 -- Set keys
@@ -429,10 +430,7 @@ awful.rules.rules = {
       border_color = beautiful.border_normal,
       focus = true,
       keys = clientkeys,
-      buttons = clientbuttons,
-      size_hints_honor = true,
-      maximized_vertical = false,
-      maximized_horizontal = false
+      buttons = clientbuttons
     }
   },
 
