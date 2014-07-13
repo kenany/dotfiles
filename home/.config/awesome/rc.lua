@@ -125,13 +125,29 @@ menubar.utils.terminal = terminal
 
 -- Widget separators
 separator = wibox.widget.textbox()
-separator.text = "<span color=\"#A9D7F2\"> || </span>"
+separator:set_markup("<span color=\"#A9D7F2\"> || </span>")
 space = wibox.widget.textbox()
-space.text = "  "
+space:set_text("  ")
 
 -- OS info widget
 sys = wibox.widget.textbox()
 vicious.register(sys, vicious.widgets.os, "$1 $2")
+
+-- Remaining fs space widget
+fsr = wibox.widget.textbox()
+vicious.register(fsr, vicious.widgets.fs, "${/ avail_gb} GB", 599)
+
+-- Remaining fs space meter
+fsrbar = awful.widget.progressbar()
+fsrbar:set_width(50)
+fsrbar:set_height(8)
+fsrbar:set_vertical(false)
+fsrbar:set_background_color("#3F3F3F")
+fsrbar:set_color(beautiful.bg_urgent)
+vicious.register(fsrbar, vicious.widgets.fs, "${/ used_p}", 599)
+
+-- Cache
+vicious.cache(vicious.widgets.fs)
 
 -- MPD now playing widget
 mpdwidget = wibox.widget.textbox()
@@ -258,6 +274,10 @@ for s = 1, screen.count() do
   left_layout:add(sys)
   left_layout:add(space)
   left_layout:add(separator)
+  left_layout:add(space)
+  left_layout:add(fsrbar)
+  left_layout:add(space)
+  left_layout:add(fsr)
 
   -- Widgets that are aligned to the right.
   local right_layout = wibox.layout.fixed.horizontal()
