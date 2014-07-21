@@ -452,16 +452,6 @@ awful.rules.rules = {
       keys = clientkeys,
       buttons = clientbuttons
     }
-  },
-
-  -- Set Sublime Text to always map on tag 2 of screen 1.
-  {
-    rule = {
-      class = "Sublime_text"
-    },
-    properties = {
-      tag = tags[1][2]
-    }
   }
 }
 -- }}}
