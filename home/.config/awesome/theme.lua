@@ -4,7 +4,7 @@ theme.font          = "terminus 8"
 
 theme.bg_normal     = "#292724"
 theme.bg_focus      = "#292724"
-theme.bg_urgent     = "#20202f"
+theme.bg_urgent     = "#242629"
 theme.bg_minimize   = "#292724"
 theme.bg_systray    = theme.bg_normal
 
