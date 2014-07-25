@@ -3,7 +3,7 @@ theme = {}
 theme.font          = "terminus 8"
 
 theme.bg_normal     = "#20202f"
-theme.bg_focus      = "#c97c7c"
+theme.bg_focus      = "#20202f"
 theme.bg_urgent     = "#20202f"
 theme.bg_minimize   = "#20202f"
 theme.bg_systray    = theme.bg_normal
