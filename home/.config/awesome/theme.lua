@@ -2,10 +2,10 @@ theme = {}
 
 theme.font          = "terminus 8"
 
-theme.bg_normal     = "#20202f"
-theme.bg_focus      = "#20202f"
+theme.bg_normal     = "#292724"
+theme.bg_focus      = "#292724"
 theme.bg_urgent     = "#20202f"
-theme.bg_minimize   = "#20202f"
+theme.bg_minimize   = "#292724"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#b4b4b4"
