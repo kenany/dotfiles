@@ -20,8 +20,8 @@ theme.border_focus  = "#b4b4b4"
 theme.border_marked = "#646464"
 
 -- Display the taglist squares
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
+-- theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
+-- theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
 
 -- Variables set for theming the menu
 theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
