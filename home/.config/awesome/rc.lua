@@ -129,10 +129,6 @@ separator:set_markup("<span color=\"#A9D7F2\"> || </span>")
 space = wibox.widget.textbox()
 space:set_text("  ")
 
--- OS info widget
-sys = wibox.widget.textbox()
-vicious.register(sys, vicious.widgets.os, "$1 $2")
-
 -- Remaining fs space widget
 fsr = wibox.widget.textbox()
 vicious.register(fsr, vicious.widgets.fs, "${/ avail_gb} GB", 599)
@@ -271,9 +267,6 @@ for s = 1, screen.count() do
 
   -- Widgets that are aligned to the left.
   local left_layout = wibox.layout.fixed.horizontal()
-  left_layout:add(sys)
-  left_layout:add(space)
-  left_layout:add(separator)
   left_layout:add(space)
   left_layout:add(fsrbar)
   left_layout:add(space)
