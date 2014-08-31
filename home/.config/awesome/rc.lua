@@ -129,6 +129,10 @@ separator:set_markup("<span color=\"#A9D7F2\"> || </span>")
 space = wibox.widget.textbox()
 space:set_text("  ")
 
+-- Battery Charge
+battpct = wibox.widget.textbox()
+vicious.register(battpct, vicious.widgets.bat, "$1 $2%", 61, "BAT0")
+
 -- Remaining fs space widget
 fsr = wibox.widget.textbox()
 vicious.register(fsr, vicious.widgets.fs, "${/ avail_gb} GB", 599)
@@ -251,6 +255,8 @@ for s = 1, screen.count() do
   -- Widgets that are aligned to the right.
   local right_layout = wibox.layout.fixed.horizontal()
   if s == 1 then right_layout:add(wibox.widget.systray()) end
+  right_layout:add(space)
+  right_layout:add(battpct)
   right_layout:add(mytextclock)
   right_layout:add(mylayoutbox[s])
 
