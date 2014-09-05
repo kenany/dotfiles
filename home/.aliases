@@ -34,5 +34,4 @@ alias week='date +%V'
 
 alias screenshot='import ~/Pictures/Screenshots/$(date +%F_%H%M%S_%N).png'
 
-alias n='N_PREFIX=$HOME/bin n'
 alias subl='subl3'
