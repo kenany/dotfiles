@@ -54,9 +54,6 @@ UNDERLINE="$(tput sgr 0 1)"
 INVERT="$(tput sgr 1 0)"
 NOCOLOR="$(tput sgr0)"
 
-# Load RVM into a shell session as a function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Start X
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
