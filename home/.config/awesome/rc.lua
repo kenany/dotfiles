@@ -131,7 +131,7 @@ space:set_text("  ")
 
 -- Battery Charge
 battpct = wibox.widget.textbox()
-vicious.register(battpct, vicious.widgets.bat, "$1 $2%", 61, "BAT0")
+vicious.register(battpct, vicious.widgets.bat, "$1 $2%", 61, "BAT1")
 
 -- Remaining fs space widget
 fsr = wibox.widget.textbox()
