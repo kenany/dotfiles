@@ -20,12 +20,6 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-# On Arch, `python` is Python 3 and `python2` is Python 2. npm modules that use
-# node-gyp need Python 2, but they'll fail to build when they discover that
-# `python`, which is normally Python 2, is actually Python 3. As such, this
-# alias explicity tells npm modules to use `python2` instead of `python`.
-alias npm='npm --python=python2'
-
 # Gzip-enabled `curl`
 alias gurl='curl --compressed'
 
