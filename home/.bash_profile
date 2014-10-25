@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$HOME/bin/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 for file in ~/.{path,bash_prompt,exports,aliases,extras}; do
     [ -r "$file" ] && source "$file"
