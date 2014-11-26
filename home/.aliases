@@ -29,3 +29,6 @@ alias week='date +%V'
 alias screenshot='import ~/Pictures/Screenshots/$(date +%F_%H%M%S_%N).png'
 
 alias subl='subl3'
+
+# Always enable colored `grep` output
+alias grep='grep --color=auto'
