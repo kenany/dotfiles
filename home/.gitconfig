@@ -1,5 +1,6 @@
 [alias]
     a = add
+    c = commit -S
     s = status -s
     tags = tag -l
     branches = branch -a
