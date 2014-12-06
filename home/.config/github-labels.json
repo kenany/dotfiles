@@ -1,0 +1,7 @@
+[
+  {"name": "bug", "color": "c40233"},
+  {"name": "dependencies", "color": "444444"},
+  {"name": "documentation", "color": "d105f0"},
+  {"name": "feature request", "color": "ace1af"},
+  {"name": "tests", "color": "dc143c"}
+]
