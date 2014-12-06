@@ -32,3 +32,5 @@ alias subl='subl3'
 
 # Always enable colored `grep` output
 alias grep='grep --color=auto'
+
+alias labels='labels -c ~/.config/github-labels.json'
