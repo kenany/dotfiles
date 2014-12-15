@@ -4,7 +4,7 @@ local gears = require("gears")
 local wibox = require("wibox")
 local vicious = require("vicious")
 local daze = require("daze")
-local awful = require("awful")
+awful = require("awful")
 awful.rules = require("awful.rules")
 awful.autofocus = require("awful.autofocus")
 
