@@ -1,6 +1,7 @@
 [alias]
     a = add
     c = commit -S
+    m = checkout master
     s = status -s
     tags = tag -l
     branches = branch -a
