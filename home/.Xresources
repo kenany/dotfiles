@@ -50,7 +50,13 @@ URxvt*scrollTtyKeypress: true
 URxvt*mousewheel: true
 
 ! Perl
-URxvt*perl-ext-common: default,vtwheel
+URxvt*perl-ext-common: default,vtwheel,font-size
+
+! Change font size
+URxvt.keysym.C-Up: perl:font-size:increase
+URxvt.keysym.C-Down: perl:font-size:decrease
+URxvt.keysym.C-S-Up: perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
 
 ! Tabs with names
 URxvt*tabbed.new-button: false
