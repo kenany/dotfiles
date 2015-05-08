@@ -2,7 +2,7 @@
 
 My dotfiles for an ArchLinux system.
 
-![screenshot](https://f.cloud.github.com/assets/733364/1701209/0dfcb9c2-6048-11e3-9366-b7f69ecf5005.png)
+![screenshot](https://camo.githubusercontent.com/621afbb2d62a4cbae3ae7117982cec6a4638132f/68747470733a2f2f692e696d6775722e636f6d2f4d754239426b502e6a7067)
 
 ## Installation
 
