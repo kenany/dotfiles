@@ -2,6 +2,7 @@
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"default_line_ending": "unix",
+	"ensure_newline_at_eof_on_save": true,
 	"find_selected_text": true,
 	"folder_exclude_patterns":
 	[
@@ -12,7 +13,7 @@
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 14.0,
+	"font_size": 13.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
