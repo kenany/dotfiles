@@ -19,5 +19,12 @@ export LESS_TERMCAP_md="$ORANGE"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
+export CC="ccache gcc"
+export CXX="ccache g++"
+
+export CCACHE_CPP2=yes
+export CCACHE_SLOPPINESS=time_macros
+
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
+export PATH="/usr/lib/ccache/bin/:$PATH"
