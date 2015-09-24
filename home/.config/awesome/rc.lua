@@ -70,6 +70,8 @@ editor_cmd = terminal .. " -e " .. editor
 -- Mod1, but it may interact with others.
 modkey = "Mod4"
 
+awful.util.spawn_with_shell("compton &")
+
 -- Table of layouts to cover with `awful.layout.inc`; order matters.
 local layouts = {
   awful.layout.suit.floating,
