@@ -32,7 +32,7 @@ theme.menu_width  = 100
 -- `beautiful.variable` in your `rc.lua`.
 
 -- Set the spacing between tiled windows to 43px.
-theme.useless_gap_width = "43"
+theme.useless_gap_width = "20"
 
 -- Set the height of the lowest window of the second column to 72px; setting it
 -- to zero makes all the slave windows the same height.
