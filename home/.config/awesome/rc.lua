@@ -4,6 +4,7 @@ local gears = require("gears")
 local wibox = require("wibox")
 local vicious = require("vicious")
 local daze = require("daze")
+local lain = require("lain")
 awful = require("awful")
 awful.rules = require("awful.rules")
 awful.autofocus = require("awful.autofocus")
@@ -131,9 +132,25 @@ separator:set_markup("<span color=\"#A9D7F2\"> || </span>")
 space = wibox.widget.textbox()
 space:set_text("  ")
 
--- Battery Charge
-battpct = wibox.widget.textbox()
-vicious.register(battpct, vicious.widgets.bat, "$1 $2%", 61, "BAT1")
+-- batteries
+white  = beautiful.fg_focus
+gray   = beautiful.fg_normal
+markup = lain.util.markup
+bat0 = lain.widgets.bat({
+    settings = function()
+        widget:set_markup(markup(gray, "[ BAT0 ") ..
+                          markup(white, bat_now.perc .. "% ")..
+                          markup(gray, bat_now.time .. " | "))
+    end
+})
+bat1 = lain.widgets.bat({
+    battery = "BAT1",
+    settings = function()
+        widget:set_markup(markup(gray, "BAT1 ") ..
+                          markup(white, bat_now.perc .. "% ")..
+                          markup(gray, bat_now.time .. " ]"))
+    end
+})
 
 -- Remaining fs space widget
 fsr = wibox.widget.textbox()
@@ -258,7 +275,8 @@ for s = 1, screen.count() do
   local right_layout = wibox.layout.fixed.horizontal()
   if s == 1 then right_layout:add(wibox.widget.systray()) end
   right_layout:add(space)
-  right_layout:add(battpct)
+  right_layout:add(bat0)
+  right_layout:add(bat1)
   right_layout:add(mytextclock)
   right_layout:add(mylayoutbox[s])
 
