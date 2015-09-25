@@ -1,9 +1,6 @@
 [submodule "home/.config/awesome/daze"]
 	path = home/.config/awesome/daze
 	url = https://github.com/speccy/daze.git
-[submodule "home/.config/awesome/lain"]
-	path = home/.config/awesome/lain
-	url = https://github.com/copycat-killer/lain.git
 [submodule "home/.config/awesome/vicious"]
 	path = home/.config/awesome/vicious
 	url = http://git.sysphere.org/vicious
