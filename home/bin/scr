@@ -8,7 +8,10 @@ pngquant /tmp/shot.png
 
 original=`wc -c < /tmp/shot.png`
 new=`wc -c < /tmp/shot-fs8.png`
-echo "$original bytes compressed down to $new"
+
+originalPretty=`pretty-bytes $original`
+newPretty=`pretty-bytes $new`
+echo "$originalPretty compressed down to $newPretty"
 
 improvement=`echo "$new * 100 / $original" | bc`
 echo "($improvement% of the original size)"
