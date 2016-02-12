@@ -58,4 +58,4 @@ NOCOLOR="$(tput sgr0)"
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
 # Fortune
-echo -e "\e[00;33m$(/usr/bin/fortune)\e[00m"
+echo -e "\e[00;33m$(fortune -a | cowsay -f tux)\e[00m"
