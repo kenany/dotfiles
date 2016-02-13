@@ -2,7 +2,7 @@
 export PATH="$HOME/bin:$PATH"
 
 for file in ~/.{path,bash_prompt,exports,aliases,extras}; do
-    [ -r "$file" ] && source "$file"
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done
 unset file
 
