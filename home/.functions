@@ -1,0 +1,8 @@
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# http://www.commandlinefu.com/commands/view/9065
+function manswitch() {
+  man $1 | less -p "^ +$2";
+}
