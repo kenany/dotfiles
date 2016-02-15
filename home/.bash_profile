@@ -33,22 +33,8 @@ shopt -s no_empty_cmd_completion
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-    shopt -s "$option" 2> /dev/null
-done
-
-# Colors
-RED="$(tput setaf 1)"
-GREEN="$(tput setaf 2)"
-YELLOW="$(tput setaf 3)"
-BLUE="$(tput setaf 4)"
-MAGENTA="$(tput setaf 5)"
-CYAN="$(tput setaf 6)"
-WHITE="$(tput setaf 7)"
-GRAY="$(tput setaf 8)"
-BOLD="$(tput bold)"
-UNDERLINE="$(tput sgr 0 1)"
-INVERT="$(tput sgr 1 0)"
-NOCOLOR="$(tput sgr0)"
+  shopt -s "$option" 2> /dev/null;
+done;
 
 # Start X
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
