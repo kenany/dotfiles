@@ -29,10 +29,6 @@ shopt -s cmdhist
 # forever and yields "Display all 15 gazillion possibilites?")
 shopt -s no_empty_cmd_completion
 
-# Do not overwrite files when redirecting using ">". Note that you can still
-# override this with ">|"
-set -o noclobber
-
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
