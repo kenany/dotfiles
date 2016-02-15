@@ -1,19 +1,19 @@
 #!/bin/bash
 
-name=`date '+%Y-%m-%d-%R'`
+name=$(date '+%Y-%m-%d-%R')
 place=$HOME/Pictures/screenshots
 
 scrot -d1 -q100 /tmp/shot.png
 pngquant /tmp/shot.png
 
-original=`wc -c < /tmp/shot.png`
-new=`wc -c < /tmp/shot-fs8.png`
+original=$(wc -c < /tmp/shot.png)
+new=$(wc -c < /tmp/shot-fs8.png)
 
-originalPretty=`pretty-bytes $original`
-newPretty=`pretty-bytes $new`
+originalPretty=$(pretty-bytes $original)
+newPretty=$(pretty-bytes $new)
 echo "$originalPretty compressed down to $newPretty"
 
-improvement=`echo "$new * 100 / $original" | bc`
+improvement=$(echo "$new * 100 / $original" | bc)
 echo "($improvement% of the original size)"
 
 cp /tmp/shot.png $place/$name.png
