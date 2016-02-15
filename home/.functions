@@ -4,5 +4,5 @@ function mkd() {
 
 # http://www.commandlinefu.com/commands/view/9065
 function manswitch() {
-  man $1 | less -p "^ +$2";
+  man "$1" | less -p "^ +$2";
 }
