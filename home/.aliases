@@ -27,3 +27,5 @@ alias subl='subl3'
 alias grep='grep --color=auto'
 
 alias labels='labels -c ~/.config/github-labels.json'
+
+alias cleandeps='yaourt -Rns $(yaourt -Qtdq)'
