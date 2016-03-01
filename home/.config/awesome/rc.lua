@@ -9,8 +9,6 @@ awful = require("awful")
 awful.rules = require("awful.rules")
 awful.autofocus = require("awful.autofocus")
 
-local layouts = require("layouts")
-
 -- Theme handling
 --
 -- Not a local variable because layouts need to access this.
@@ -76,8 +74,8 @@ awful.util.spawn_with_shell("compton &")
 -- Table of layouts to cover with `awful.layout.inc`; order matters.
 local layouts = {
   awful.layout.suit.floating,
-  layouts.uselesstile,
-  layouts.centerwork
+  lain.layout.uselesstile,
+  lain.layout.centerwork
 }
 
 -- Themes define colours, icons, and wallpapers

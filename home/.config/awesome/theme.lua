@@ -74,7 +74,6 @@ theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/defau
 
 theme.wallpaper = "/home/kenan/Pictures/wallpapers/1.jpg"
 
--- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
 theme.layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png"
 theme.layout_floating  = "/usr/share/awesome/themes/default/layouts/floatingw.png"
@@ -84,11 +83,15 @@ theme.layout_fullscreen = "/usr/share/awesome/themes/default/layouts/fullscreenw
 theme.layout_tilebottom = "/usr/share/awesome/themes/default/layouts/tilebottomw.png"
 theme.layout_tileleft   = "/usr/share/awesome/themes/default/layouts/tileleftw.png"
 theme.layout_tile = "/usr/share/awesome/themes/default/layouts/tilew.png"
+theme.layout_uselesstile = "/usr/share/awesome/themes/default/layouts/tilew.png"
 theme.layout_tiletop = "/usr/share/awesome/themes/default/layouts/tiletopw.png"
 theme.layout_spiral  = "/usr/share/awesome/themes/default/layouts/spiralw.png"
 theme.layout_dwindle = "/usr/share/awesome/themes/default/layouts/dwindlew.png"
 
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+
+theme.lain_icons = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
+theme.layout_centerwork = theme.lain_icons .. "centerworkw.png"
 
 -- Define the icon theme for application icons. If not set then the icons from
 -- `/usr/share/icons` and `/usr/share/icons/hicolor` will be used.
