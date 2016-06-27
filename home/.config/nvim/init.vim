@@ -33,3 +33,9 @@ set softtabstop=2
 set textwidth=80
 set colorcolumn=+1
 
+" Use ag in CtrlP for listing files
+let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+" ag is fast enough that CtrlP doesn't need to cache
+let g:ctrlp_use_caching = 0
+
