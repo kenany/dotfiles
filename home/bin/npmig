@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+npm rm -g $1 && npm i -g $1
