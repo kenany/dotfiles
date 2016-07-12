@@ -49,6 +49,13 @@ let g:ctrlp_use_caching = 0
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
 
+" Be case-sensitive when an uppercase character is used.
+let g:deoplete#enable_camel_case = 1
+
+autocmd FileType javascript setlocal omnifunc=tern#Complete
+
+let g:tern_show_signature_in_pum = 1
+
 set background=dark
 let base16colorspace=256
 colorscheme base16-chalk
