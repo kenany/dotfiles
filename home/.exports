@@ -25,6 +25,9 @@ export CXX="ccache g++"
 export CCACHE_CPP2=yes
 export CCACHE_SLOPPINESS=time_macros
 
+export GOPATH=~/go
+
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="$HOME/go/bin:$PATH"
