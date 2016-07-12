@@ -46,6 +46,9 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 " `ag` is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
 
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
+
 set background=dark
 let base16colorspace=256
 colorscheme base16-chalk

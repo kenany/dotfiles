@@ -1,31 +1,36 @@
 [submodule "home/.config/awesome/daze"]
-	path = home/.config/awesome/daze
-	url = https://github.com/speccy/daze.git
+  path = home/.config/awesome/daze
+  url = https://github.com/speccy/daze.git
 [submodule "home/.config/awesome/vicious"]
-	path = home/.config/awesome/vicious
-	url = http://git.sysphere.org/vicious
+  path = home/.config/awesome/vicious
+  url = http://git.sysphere.org/vicious
 [submodule "home/bin/z"]
-	path = home/bin/z
-	url = https://github.com/rupa/z.git
+  path = home/bin/z
+  url = https://github.com/rupa/z.git
 [submodule "home/.config/awesome/lain"]
-	path = home/.config/awesome/lain
-	url = https://github.com/copycat-killer/lain.git
+  path = home/.config/awesome/lain
+  url = https://github.com/copycat-killer/lain.git
 [submodule "home/.config/nvim/bundle/vim-pathogen"]
-	path = home/.config/nvim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
+  path = home/.config/nvim/bundle/vim-pathogen
+  url = https://github.com/tpope/vim-pathogen.git
 [submodule "home/.config/nvim/bundle/vim-javascript"]
-	path = home/.config/nvim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
+  path = home/.config/nvim/bundle/vim-javascript
+  url = https://github.com/pangloss/vim-javascript.git
 [submodule "home/.config/nvim/bundle/vim-airline"]
-	path = home/.config/nvim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
+  path = home/.config/nvim/bundle/vim-airline
+  url = https://github.com/vim-airline/vim-airline.git
 [submodule "home/.config/nvim/bundle/ctrlp.vim"]
   path = home/.config/nvim/bundle/ctrlp.vim
   url = https://github.com/ctrlpvim/ctrlp.vim.git
-
 [submodule "home/.config/nvim/bundle/base16-vim"]
-	path = home/.config/nvim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
+  path = home/.config/nvim/bundle/base16-vim
+  url = https://github.com/chriskempson/base16-vim.git
 [submodule "home/.config/base16-shell"]
-	path = home/.config/base16-shell
-	url = https://github.com/chriskempson/base16-shell.git
+  path = home/.config/base16-shell
+  url = https://github.com/chriskempson/base16-shell.git
+[submodule "home/.config/nvim/bundle/deoplete.nvim"]
+  path = home/.config/nvim/bundle/deoplete.nvim
+  url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "home/.config/nvim/bundle/deoplete-ternjs"]
+  path = home/.config/nvim/bundle/deoplete-ternjs
+  url = https://github.com/carlitux/deoplete-ternjs.git
