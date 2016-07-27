@@ -150,19 +150,6 @@ bat1 = lain.widgets.bat({
     end
 })
 
--- Remaining fs space widget
-fsr = wibox.widget.textbox()
-vicious.register(fsr, vicious.widgets.fs, "${/ avail_gb} GB", 599)
-
--- Remaining fs space meter
-fsrbar = awful.widget.progressbar()
-fsrbar:set_width(50)
-fsrbar:set_height(8)
-fsrbar:set_vertical(false)
-fsrbar:set_background_color("#3F3F3F")
-fsrbar:set_color(beautiful.bg_urgent)
-vicious.register(fsrbar, vicious.widgets.fs, "${/ used_p}", 599)
-
 -- Cache
 vicious.cache(vicious.widgets.fs)
 
@@ -289,20 +276,12 @@ for s = 1, screen.count() do
   -- Create the bottom wibox
   mywibox[s] = awful.wibox({position = "bottom", screen = s})
 
-  -- Widgets that are aligned to the left.
-  local left_layout = wibox.layout.fixed.horizontal()
-  left_layout:add(space)
-  left_layout:add(fsrbar)
-  left_layout:add(space)
-  left_layout:add(fsr)
-
   -- Widgets that are aligned to the right.
   local right_layout = wibox.layout.fixed.horizontal()
   right_layout:add(mpdwidget)
 
   -- Now bring it all together.
   local layout = wibox.layout.align.horizontal()
-  layout:set_left(left_layout)
   layout:set_right(right_layout)
 
   mywibox[s]:set_widget(layout)
