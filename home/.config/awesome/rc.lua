@@ -129,22 +129,25 @@ local space = wibox.widget.textbox()
 space:set_text("  ")
 
 -- batteries
-local white = beautiful.fg_focus
-local gray = beautiful.fg_normal
 local markup = lain.util.markup
 local bat0 = lain.widgets.bat({
-    battery = "BAT0",
-    settings = function()
-        widget:set_markup(markup(gray, "&#xf240;") ..
-                          markup(white, bat_now.perc .. "% "))
-    end
+  battery = "BAT0",
+  settings = function()
+    widget:set_markup(markup("#eda987", "&#xf240; " .. bat_now.perc .. "% "))
+  end
 })
 local bat1 = lain.widgets.bat({
-    battery = "BAT1",
-    settings = function()
-        widget:set_markup(markup(gray, "&#xf240;") ..
-                          markup(white, bat_now.perc .. "% "))
-    end
+  battery = "BAT1",
+  settings = function()
+    widget:set_markup(markup("#ddb26f", "&#xf240; " .. bat_now.perc .. "% "))
+  end
+})
+
+-- cpu
+local cpuwidget = lain.widgets.cpu({
+  settings = function()
+    widget:set_markup(markup("#fb9fb1", "&#xf0e4; " .. cpu_now.usage .. "% "))
+  end
 })
 
 -- Cache
@@ -163,9 +166,24 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
  10
 )
 
--- Date + clock widget
-local mytextclock = awful.widget.textclock("   %I:%M %p - %Y-%m-%d (%A) ")
-daze.widgets.calendar.register(mytextclock)
+-- clock and date
+local mytextclock = lain.widgets.abase({
+  timeout = 60,
+  cmd = "date +'%I:%M %p - %Y-%m-%d (%A)'",
+  settings = function()
+    local t_output = ""
+    local o_it = string.gmatch(output, "%S+")
+
+    for i = 1, 3 do
+      t_output = t_output .. " " .. o_it(i)
+    end
+
+    widget:set_markup(markup("#d0d0d0", output))
+  end
+})
+
+-- display calendar when hovering over date
+lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
 
 -- Create a wibox for each screen and add it
 local mywibox = {}
@@ -257,6 +275,7 @@ for s = 1, screen.count() do
   local right_layout = wibox.layout.fixed.horizontal()
   if s == 1 then right_layout:add(wibox.widget.systray()) end
   right_layout:add(space)
+  right_layout:add(cpuwidget)
   right_layout:add(bat0)
   right_layout:add(bat1)
   right_layout:add(mytextclock)
