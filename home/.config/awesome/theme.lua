@@ -1,78 +1,68 @@
 local theme = {}
 
-theme.font          = "Source Code Pro 8"
+theme.font = "Source Code Pro 8"
 
-theme.bg_normal     = "#292724"
-theme.bg_focus      = "#292724"
-theme.bg_urgent     = "#242629"
-theme.bg_minimize   = "#292724"
-theme.bg_systray    = theme.bg_normal
+theme.base00 = "#151515"
+theme.base01 = "#202020"
+theme.base02 = "#303030"
+theme.base03 = "#505050"
+theme.base04 = "#b0b0b0"
+theme.base05 = "#d0d0d0"
+theme.base06 = "#e0e0e0"
+theme.base07 = "#f5f5f5"
+theme.base08 = "#fb9fb1"
+theme.base09 = "#eda987"
+theme.base0A = "#ddb26f"
+theme.base0B = "#acc267"
+theme.base0C = "#12cfc0"
+theme.base0D = "#6fc2ef"
+theme.base0E = "#e1a3ee"
+theme.base0F = "#deaf8f"
 
-theme.fg_normal     = "#b4b4b4"
-theme.fg_focus      = "#eeeeee"
-theme.fg_urgent     = "#646464"
-theme.fg_minimize   = "#eeeeee"
-theme.fg_systray    = "#b4b4b4"
+theme.menu_bg_normal = theme.base00
+theme.menu_bg_focus = theme.base00
+theme.bg_normal = theme.base00
+theme.bg_focus = theme.base00
+theme.bg_urgent = theme.base00
 
-theme.border_width  = 2
-theme.border_normal = "#646464"
-theme.border_focus  = "#b4b4b4"
-theme.border_marked = "#646464"
+theme.fg_normal = theme.base05
+theme.fg_focus = theme.base07
+theme.fg_urgent = theme.base00
+theme.fg_minimize = theme.base00
 
--- Display the taglist squares
--- theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
--- theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
+theme.border_width = 1
+theme.border_normal = "#1c2022"
+theme.border_focus = "#606060"
+theme.border_marked = "#3ca4d8"
+theme.menu_width = 110
+theme.menu_border_width = 0
+theme.menu_fg_normal = "#d0d0d0"
+theme.menu_fg_focus = "#e0e0e0"
+theme.menu_bg_normal = "#151515"
+theme.menu_bg_focus = "#151515"
 
 -- Variables set for theming the menu
 theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
 theme.menu_height = 15
 theme.menu_width  = 100
 
--- You can add as many variables as you wish and access them by using
--- `beautiful.variable` in your `rc.lua`.
-
--- Set the spacing between tiled windows to 43px.
-theme.useless_gap_width = "20"
+-- spacing between tiled windows
+theme.useless_gap_width = 20
 
 -- Set the height of the lowest window of the second column to 72px; setting it
 -- to zero makes all the slave windows the same height.
-theme.lower_window_height = "72"
+theme.lower_window_height = 72
 
 -- Set your vertical resolution.
-theme.vertical_resolution = "1080"
+theme.vertical_resolution = 1080
 
 -- Set the extra vertical spacing to 8px.
-theme.vertical_border = "3"
+theme.vertical_border = 8
 
 -- Set the extra outermost spacing to 18px.
-theme.outer_padding = "0"
+theme.outer_padding = 18
 
-
--- Define the image to load
-theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/default/titlebar/close_focus.png"
-
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/default/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/ontop_focus_active.png"
-
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/default/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/sticky_focus_active.png"
-
-theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/default/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/floating_focus_active.png"
-
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
-
-theme.wallpaper = "/home/kenan/img/1.png"
+theme.wallpaper = os.getenv("HOME") .. "/img/1.png"
 
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
 theme.layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png"
@@ -92,9 +82,5 @@ theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 
 theme.lain_icons = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
 theme.layout_centerwork = theme.lain_icons .. "centerworkw.png"
-
--- Define the icon theme for application icons. If not set then the icons from
--- `/usr/share/icons` and `/usr/share/icons/hicolor` will be used.
-theme.icon_theme = nil
 
 return theme

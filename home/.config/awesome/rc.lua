@@ -86,7 +86,7 @@ end
 
 -- Define a tag table which hold all screen tags.
 local tags = {
-  names = {" ⠐ ", " ⠡ ", " ⠪ ", " ⠵ ", " ⠻ "},
+  names = {"1", "2", "3", "4", "5"},
   layout = {layouts[2], layouts[2], layouts[2], layouts[2], layouts[2]}
 }
 
@@ -159,7 +159,6 @@ local mpdwidget = lain.widgets.mpd({
     if mpd_now.state == "play" then
       artist = mpd_now.artist .. " > "
       title  = mpd_now.title .. " "
-      mpdicon:set_image(beautiful.widget_note_on)
     elseif mpd_now.state == "pause" then
       artist = "mpd "
       title  = "paused "
