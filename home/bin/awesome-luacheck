@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+luacheck "$1" --globals awesome button client dbus drawable drawin key \
+  keygrabber mouse mousegrabber root screen selection tag timer
