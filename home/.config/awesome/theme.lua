@@ -1,6 +1,6 @@
-theme = {}
+local theme = {}
 
-theme.font          = "terminus 8"
+theme.font          = "Source Code Pro 8"
 
 theme.bg_normal     = "#292724"
 theme.bg_focus      = "#292724"
@@ -72,7 +72,7 @@ theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/def
 theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/kenan/Pictures/wallpapers/1.jpg"
+theme.wallpaper = "/home/kenan/img/1.png"
 
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
 theme.layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png"

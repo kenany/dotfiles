@@ -5,20 +5,18 @@ local wibox = require("wibox")
 local vicious = require("vicious")
 local daze = require("daze")
 local lain = require("lain")
-awful = require("awful")
+local awful = require("awful")
 awful.rules = require("awful.rules")
 awful.autofocus = require("awful.autofocus")
 
--- Theme handling
---
--- Not a local variable because layouts need to access this.
-beautiful = require("beautiful")
+-- themes
+local beautiful = require("beautiful")
 
--- Notifications
+-- notifications
 local naughty = require("naughty")
 local menubar = require("menubar")
 
--- Set locale
+-- locale
 os.setlocale("en_US.UTF-8")
 
 -- Error handling
@@ -56,10 +54,10 @@ do
 end
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
-browser = os.getenv("BROWSER") or "chromium"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
+local terminal = "urxvt"
+local browser = os.getenv("BROWSER") or "chromium"
+local editor = os.getenv("EDITOR") or "nano"
+local editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey
 --
@@ -67,7 +65,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- like this or do not have such a key, I suggest you to remap Mod4 to another
 -- key using xmodmap or other tools. However, you can use another modifier like
 -- Mod1, but it may interact with others.
-modkey = "Mod4"
+local modkey = "Mod4"
 
 awful.util.spawn_with_shell("compton &")
 
@@ -125,28 +123,27 @@ local mylauncher = awful.widget.launcher({
 menubar.utils.terminal = terminal
 
 -- Widget separators
-separator = wibox.widget.textbox()
+local separator = wibox.widget.textbox()
 separator:set_markup("<span color=\"#A9D7F2\"> || </span>")
-space = wibox.widget.textbox()
+local space = wibox.widget.textbox()
 space:set_text("  ")
 
 -- batteries
-white  = beautiful.fg_focus
-gray   = beautiful.fg_normal
-markup = lain.util.markup
-bat0 = lain.widgets.bat({
+local white = beautiful.fg_focus
+local gray = beautiful.fg_normal
+local markup = lain.util.markup
+local bat0 = lain.widgets.bat({
+    battery = "BAT0",
     settings = function()
-        widget:set_markup(markup(gray, "[ BAT0 ") ..
-                          markup(white, bat_now.perc .. "% ")..
-                          markup(gray, bat_now.time .. " | "))
+        widget:set_markup(markup(gray, "&#xf240;") ..
+                          markup(white, bat_now.perc .. "% "))
     end
 })
-bat1 = lain.widgets.bat({
+local bat1 = lain.widgets.bat({
     battery = "BAT1",
     settings = function()
-        widget:set_markup(markup(gray, "BAT1 ") ..
-                          markup(white, bat_now.perc .. "% ")..
-                          markup(gray, bat_now.time .. " ]"))
+        widget:set_markup(markup(gray, "&#xf240;") ..
+                          markup(white, bat_now.perc .. "% "))
     end
 })
 
@@ -154,7 +151,7 @@ bat1 = lain.widgets.bat({
 vicious.cache(vicious.widgets.fs)
 
 -- MPD now playing widget
-mpdwidget = wibox.widget.textbox()
+local mpdwidget = wibox.widget.textbox()
 vicious.register(mpdwidget, vicious.widgets.mpd,
   function(widget, args)
     if args["{state}"] == "Stop" then
@@ -167,14 +164,14 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
 )
 
 -- Date + clock widget
-mytextclock = awful.widget.textclock("   %I:%M %p - %Y-%m-%d (%A) ")
+local mytextclock = awful.widget.textclock("   %I:%M %p - %Y-%m-%d (%A) ")
 daze.widgets.calendar.register(mytextclock)
 
 -- Create a wibox for each screen and add it
-mywibox = {}
-mypromptbox = {}
-mylayoutbox = {}
-mytaglist = {}
+local mywibox = {}
+local mypromptbox = {}
+local mylayoutbox = {}
+local mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
   awful.button({}, 1, awful.tag.viewonly),
   awful.button({modkey}, 1, awful.client.movetotag),
@@ -183,7 +180,7 @@ mytaglist.buttons = awful.util.table.join(
   awful.button({}, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
   awful.button({}, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
 )
-mytasklist = {}
+local mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
   awful.button({}, 1, function(c)
     if c == client.focus then
