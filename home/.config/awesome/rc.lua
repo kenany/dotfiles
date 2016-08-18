@@ -2,8 +2,6 @@ local gears = require("gears")
 
 -- Widgets
 local wibox = require("wibox")
-local vicious = require("vicious")
-local daze = require("daze")
 local lain = require("lain")
 local awful = require("awful")
 awful.rules = require("awful.rules")
@@ -150,21 +148,29 @@ local cpuwidget = lain.widgets.cpu({
   end
 })
 
--- Cache
-vicious.cache(vicious.widgets.fs)
+-- mpd
+local mpdwidget = lain.widgets.mpd({
+  settings = function()
+    mpd_notification_preset = {
+      text = string.format("%s [%s] - %s\n%s", mpd_now.artist, mpd_now.album,
+        mpd_now.date, mpd_now.title)
+    }
 
--- MPD now playing widget
-local mpdwidget = wibox.widget.textbox()
-vicious.register(mpdwidget, vicious.widgets.mpd,
-  function(widget, args)
-    if args["{state}"] == "Stop" then
-      return " - "
+    if mpd_now.state == "play" then
+      artist = mpd_now.artist .. " > "
+      title  = mpd_now.title .. " "
+      mpdicon:set_image(beautiful.widget_note_on)
+    elseif mpd_now.state == "pause" then
+      artist = "mpd "
+      title  = "paused "
     else
-      return args["{Artist}"] .. ' - ' .. args["{Title}"]
+      artist = ""
+      title  = ""
     end
- end,
- 10
-)
+
+    widget:set_markup(markup("#e54c62", artist) .. markup("#b2b2b2", title))
+  end
+})
 
 -- clock and date
 local mytextclock = lain.widgets.abase({
@@ -273,8 +279,8 @@ for s = 1, screen.count() do
 
   -- Widgets that are aligned to the right.
   local right_layout = wibox.layout.fixed.horizontal()
-  if s == 1 then right_layout:add(wibox.widget.systray()) end
   right_layout:add(space)
+  right_layout:add(mpdwidget)
   right_layout:add(cpuwidget)
   right_layout:add(bat0)
   right_layout:add(bat1)
@@ -294,7 +300,7 @@ for s = 1, screen.count() do
 
   -- Widgets that are aligned to the right.
   local right_layout = wibox.layout.fixed.horizontal()
-  right_layout:add(mpdwidget)
+  if s == 1 then right_layout:add(wibox.widget.systray()) end
 
   -- Now bring it all together.
   local layout = wibox.layout.align.horizontal()
