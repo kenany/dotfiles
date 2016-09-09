@@ -1,10 +1,12 @@
 [
   {"name": "bug", "color": "c40233"},
-  {"name": "dependencies", "color": "444444"},
-  {"name": "documentation", "color": "d105f0"},
+  {"name": "deps", "color": "444444"},
+  {"name": "doc", "color": "d105f0"},
   {"name": "duplicate", "color": "cccccc"},
+  {"name": "feature-request", "color": "98DCFF"},
   {"name": "question", "color": "cc317c"},
-  {"name": "feature request", "color": "ace1af"},
+  {"name": "patch-welcome", "color": "beeb71"},
   {"name": "tests", "color": "dc143c"},
+  {"name": "travis", "color": "EEFFA9"},
   {"name": "wontfix", "color": "ffffff"}
 ]
