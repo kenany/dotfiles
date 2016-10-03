@@ -29,3 +29,7 @@ alias grep='grep --color=auto'
 alias labels='labels -c ~/.config/github-labels.json'
 
 alias cleandeps='yaourt -Rns $(yaourt -Qtdq)'
+
+alias nnode='./configure --ninja --prefix=~/local && ninja -C out/Release'
+
+alias vim='nvim'
