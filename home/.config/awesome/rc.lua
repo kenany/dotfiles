@@ -86,7 +86,7 @@ end
 
 -- Define a tag table which hold all screen tags.
 local tags = {
-  names = {"1", "2", "3", "4", "5"},
+  names = {" 1 ", " 2 ", " 3 ", " 4 ", " 5 "},
   layout = {layouts[2], layouts[2], layouts[2], layouts[2], layouts[2]}
 }
 
