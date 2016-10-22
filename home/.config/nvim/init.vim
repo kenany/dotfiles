@@ -55,8 +55,9 @@ let g:deoplete#enable_camel_case = 1
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 let g:tern_show_signature_in_pum = 1
+let g:deoplete#sources#ternjs#tern_bin = 'tern'
 
+let g:base16_shell_path = '~/.config/base16-shell/scripts'
 set background=dark
 let base16colorspace=256
-colorscheme base16-chalk
-
+colorscheme base16-brewer

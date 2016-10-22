@@ -35,7 +35,7 @@ for option in autocd globstar; do
 done;
 
 # base16 shell
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-chalk.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-brewer.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Start X

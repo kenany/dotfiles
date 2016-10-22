@@ -69,40 +69,48 @@ URxvt*tabbed.tab-bg: 7
 ! Remove weird behavior when pressing ctrl-shift
 URxvt*iso14755: false
 
-#define base00 #151515
-#define base01 #202020
-#define base02 #303030
-#define base03 #505050
-#define base04 #b0b0b0
-#define base05 #d0d0d0
-#define base06 #e0e0e0
-#define base07 #f5f5f5
-#define base08 #fb9fb1
-#define base09 #eda987
-#define base0A #ddb26f
-#define base0B #acc267
-#define base0C #12cfc0
-#define base0D #6fc2ef
-#define base0E #e1a3ee
-#define base0F #deaf8f
+#define base00 #0c0d0e
+#define base01 #2e2f30
+#define base02 #515253
+#define base03 #737475
+#define base04 #959697
+#define base05 #b7b8b9
+#define base06 #dadbdc
+#define base07 #fcfdfe
+#define base08 #e31a1c
+#define base09 #e6550d
+#define base0A #dca060
+#define base0B #31a354
+#define base0C #80b1d3
+#define base0D #3182bd
+#define base0E #756bb1
+#define base0F #b15928
 
-*.foreground: base05
-*.background: base00
-*.cursorColor: base05
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
 
-*.color0: base00
-*.color1: base08
-*.color2: base0B
-*.color3: base0A
-*.color4: base0D
-*.color5: base0E
-*.color6: base0C
-*.color7: base05
-*.color8: base03
-*.color9: base09
-*.color10: base01
-*.color11: base02
-*.color12: base04
-*.color13: base06
-*.color14: base0F
-*.color15: base07
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
