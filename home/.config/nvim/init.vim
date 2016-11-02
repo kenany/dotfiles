@@ -67,6 +67,8 @@ let g:deoplete#enable_camel_case = 1
 let g:tern_show_signature_in_pum = 1
 let g:deoplete#sources#ternjs#tern_bin = 'tern'
 
+let g:jsx_ext_required = 0
+
 let g:base16_shell_path = '~/.config/base16-shell/scripts'
 set background=dark
 let base16colorspace=256
