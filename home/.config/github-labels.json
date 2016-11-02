@@ -1,12 +1,15 @@
 [
   {"name": "bug", "color": "c40233"},
-  {"name": "deps", "color": "444444"},
-  {"name": "doc", "color": "d105f0"},
+  {"name": "deps", "color": "505050"},
+  {"name": "doc", "color": "e1a3ee"},
   {"name": "duplicate", "color": "cccccc"},
-  {"name": "feature-request", "color": "98DCFF"},
-  {"name": "question", "color": "cc317c"},
-  {"name": "patch-welcome", "color": "beeb71"},
-  {"name": "tests", "color": "dc143c"},
-  {"name": "travis", "color": "EEFFA9"},
-  {"name": "wontfix", "color": "ffffff"}
+  {"name": "feature-request", "color": "6fc2ef"},
+  {"name": "invalid", "color": "e0e0e0"},
+  {"name": "question", "color": "fb9fb1"},
+  {"name": "patch-welcome", "color": "acc267"},
+  {"name": "src", "color": "82AAFF"},
+  {"name": "test", "color": "ddb26f"},
+  {"name": "travis", "color": "deaf8f"},
+  {"name": "wontfix", "color": "f5f5f5"},
+  {"name": "tools", "color": "8BD649"}
 ]
