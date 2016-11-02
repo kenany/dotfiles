@@ -54,10 +54,15 @@ let g:python3_host_prog = '/usr/bin/python3'
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
 
+let g:deoplete#sources={}
+let g:deoplete#sources._    = ['buffer', 'file']
+let g:deoplete#sources.vim  = ['buffer', 'member', 'file']
+let g:deoplete#sources['javascript.jsx'] = ['buffer', 'file', 'ternjs']
+let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni']
+let g:deoplete#sources.html = ['buffer', 'member', 'file', 'omni']
+
 " Be case-sensitive when an uppercase character is used.
 let g:deoplete#enable_camel_case = 1
-
-autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 let g:tern_show_signature_in_pum = 1
 let g:deoplete#sources#ternjs#tern_bin = 'tern'
