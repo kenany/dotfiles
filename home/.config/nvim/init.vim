@@ -21,7 +21,10 @@ set directory=~/.cache/.backup
 " Use `ag` instead of `grep` since it is much faster
 set grepprg=ag\ --nogroup\ --nocolor
 
-" Configure airline 
+" trim trailing spaces
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Configure airline
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline_linecolumn_prefix = '␊ '
