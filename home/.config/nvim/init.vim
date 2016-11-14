@@ -40,10 +40,10 @@ set softtabstop=2
 set textwidth=80
 set colorcolumn=+1
 
-" Use `ag` in CtrlP for listing files since it is fast at doing it
-let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+" Use ripgrep in CtrlP for listing files since it is fast at doing it
+let g:ctrlp_user_command = 'rg --files --hidden %s'
 
-" `ag` is fast enough that CtrlP doesn't need to cache
+" ripgrep is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
 
 " Specify paths to python executables to save neovim the trouble of searching
