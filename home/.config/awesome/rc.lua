@@ -173,7 +173,6 @@ local mpdwidget = lain.widgets.mpd({
 
 -- clock and date
 local mytextclock = lain.widgets.abase({
-  timeout = 60,
   cmd = "date +'%I:%M %p - %Y-%m-%d (%A)'",
   settings = function()
     local t_output = ""
