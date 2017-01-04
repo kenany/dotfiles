@@ -1,5 +1,37 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+let s:plugins = [
+  \ ['dein.vim'],
+  \ ['base16-vim'],
+  \ ['ctrlp.vim'],
+  \ ['deoplete.nvim', {'on_i': 1}],
+  \ ['deoplete-ternjs'],
+  \ ['vim-airline'],
+  \ ['vim-javascript', {'on_ft': ['javascript']}],
+  \ ['vim-jsx'],
+  \ ]
+
+set runtimepath+=~/.config/nvim/bundle/dein.vim
+
+if dein#load_state(expand('~/.cache/dein'))
+  call dein#begin(expand('~/.cache/dein'))
+
+  for plugin in s:plugins
+    if len(plugin) == 2
+      call dein#add(expand('~/.config/nvim/bundle/' . plugin[0]), plugin[1])
+    else
+      call dein#add(expand('~/.config/nvim/bundle/' . plugin[0]))
+    endif
+  endfor
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif
 
 " Display line numbers
 set number

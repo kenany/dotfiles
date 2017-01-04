@@ -4,9 +4,6 @@
 [submodule "home/.config/awesome/lain"]
   path = home/.config/awesome/lain
   url = https://github.com/copycat-killer/lain.git
-[submodule "home/.config/nvim/bundle/vim-pathogen"]
-  path = home/.config/nvim/bundle/vim-pathogen
-  url = https://github.com/tpope/vim-pathogen.git
 [submodule "home/.config/nvim/bundle/vim-javascript"]
   path = home/.config/nvim/bundle/vim-javascript
   url = https://github.com/pangloss/vim-javascript.git
@@ -31,3 +28,6 @@
 [submodule "home/.config/nvim/bundle/vim-jsx"]
   path = home/.config/nvim/bundle/vim-jsx
   url = https://github.com/mxw/vim-jsx.git
+[submodule "home/.config/nvim/bundle/dein.vim"]
+	path = home/.config/nvim/bundle/dein.vim
+	url = https://github.com/Shougo/dein.vim.git
