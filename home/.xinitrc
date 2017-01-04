@@ -9,6 +9,4 @@ fi
 
 xrdb ~/.Xresources
 
-compton &
-
 exec awesome
