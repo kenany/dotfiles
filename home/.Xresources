@@ -50,13 +50,12 @@ URxvt*scrollTtyKeypress: true
 URxvt*mousewheel: true
 
 ! Perl
-URxvt*perl-ext-common: default,vtwheel,font-size
+URxvt*perl-ext-common: default,vtwheel,resize-font
 
 ! Change font size
-URxvt.keysym.C-Up: perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
-URxvt.keysym.C-S-Up: perl:font-size:incglobal
-URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
 
 ! Tabs with names
 URxvt*tabbed.new-button: false
@@ -67,7 +66,8 @@ URxvt*tabbed.tab-fg: 8
 URxvt*tabbed.tab-bg: 7
 
 ! Remove weird behavior when pressing ctrl-shift
-URxvt*iso14755: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 #define base00 #0c0d0e
 #define base01 #2e2f30
