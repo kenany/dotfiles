@@ -126,23 +126,27 @@ space:set_text("  ")
 
 -- batteries
 local markup = lain.util.markup
-local bat0 = lain.widgets.bat({
-  battery = "BAT0",
+local batteryWidget = lain.widgets.bat({
+  batteries = {"BAT0", "BAT1"},
   settings = function()
-    widget:set_markup(markup("#eda987", "&#xf240; " .. bat_now.perc .. "% "))
+    widget:set_markup(markup("#d0d0d0", "&#xf240; " .. bat_now.n_perc[1] .. "% "
+      .. bat_now.n_perc[2] .. "% "))
   end
 })
-local bat1 = lain.widgets.bat({
-  battery = "BAT1",
+
+-- brightness
+local brightnessWidget = lain.widgets.abase({
+  cmd = "xbacklight",
   settings = function()
-    widget:set_markup(markup("#ddb26f", "&#xf240; " .. bat_now.perc .. "% "))
+    widget:set_markup(markup("#d0d0d0", "☀ "
+      .. math.floor(tonumber(output)) .. "% "))
   end
 })
 
 -- cpu
 local cpuwidget = lain.widgets.cpu({
   settings = function()
-    widget:set_markup(markup("#fb9fb1", "&#xf0e4; " .. cpu_now.usage .. "% "))
+    widget:set_markup(markup("#d0d0d0", "&#xf0e4; " .. cpu_now.usage .. "% "))
   end
 })
 
@@ -278,8 +282,8 @@ for s = 1, screen.count() do
   right_layout:add(space)
   right_layout:add(mpdwidget)
   right_layout:add(cpuwidget)
-  right_layout:add(bat0)
-  right_layout:add(bat1)
+  right_layout:add(brightnessWidget)
+  right_layout:add(batteryWidget)
   right_layout:add(mytextclock)
   right_layout:add(mylayoutbox[s])
 
