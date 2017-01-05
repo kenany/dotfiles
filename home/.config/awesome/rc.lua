@@ -185,7 +185,7 @@ local mytextclock = lain.widgets.abase({
 })
 
 -- display calendar when hovering over date
-lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
+lain.widgets.calendar.attach(mytextclock, { font_size = 10 })
 
 -- Create a wibox for each screen and add it
 local mywibox = {}
