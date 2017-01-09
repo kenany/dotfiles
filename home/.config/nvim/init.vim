@@ -4,6 +4,7 @@ let s:plugins = [
   \ ['ctrlp.vim'],
   \ ['deoplete.nvim', {'on_i': 1}],
   \ ['deoplete-ternjs'],
+  \ ['neoinclude.vim', {'on_i': 1}],
   \ ['vim-airline'],
   \ ['vim-javascript', {'on_ft': ['javascript']}],
   \ ['vim-jsx'],
