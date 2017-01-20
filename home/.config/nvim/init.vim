@@ -6,6 +6,7 @@ let s:plugins = [
   \ ['deoplete-ternjs'],
   \ ['neoinclude.vim', {'on_i': 1}],
   \ ['vim-airline'],
+  \ ['vim-easymotion', {'on_map': '<Plug>(easymotion-prefix)'}],
   \ ['vim-javascript', {'on_ft': ['javascript']}],
   \ ['vim-jsx'],
   \ ]
@@ -51,8 +52,12 @@ set smartcase
 set backupdir=~/.cache/.backup
 set directory=~/.cache/.backup
 
-" Use `ag` instead of `grep` since it is much faster
-set grepprg=ag\ --nogroup\ --nocolor
+" Use ripgrep since it's so fast
+set grepprg=rg\ --vimgrep\ --no-heading
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+" Double leader to activate easymotion
+map <Leader><Leader> <Plug>(easymotion-prefix)
 
 " trim trailing spaces
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
