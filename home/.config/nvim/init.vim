@@ -82,7 +82,7 @@ set textwidth=80
 set colorcolumn=+1
 
 " Use ripgrep in CtrlP for listing files since it is fast at doing it
-let g:ctrlp_user_command = 'rg --files --hidden %s'
+let g:ctrlp_user_command = 'rg %s --no-ignore --hidden --files -g "" -g !.git'
 
 " ripgrep is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
