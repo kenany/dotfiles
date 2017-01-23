@@ -91,7 +91,7 @@ let g:ctrlp_use_caching = 0
 
 " Specify paths to python executables to save neovim the trouble of searching
 " for them (use `:CheckHealth` to verify)
-let g:python2_host_prog = '/usr/bin/python2'
+let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " Enable deoplete
