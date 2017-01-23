@@ -5,6 +5,7 @@ let s:plugins = [
   \ ['deoplete.nvim', {'on_i': 1}],
   \ ['deoplete-ternjs'],
   \ ['neoinclude.vim', {'on_i': 1}],
+  \ ['rust.vim', {'merged': 1}],
   \ ['vim-airline'],
   \ ['vim-easymotion', {'on_map': '<Plug>(easymotion-prefix)'}],
   \ ['vim-javascript', {'on_ft': ['javascript']}],
