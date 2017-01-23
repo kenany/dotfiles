@@ -423,44 +423,51 @@ local clientkeys = awful.util.table.join(
 )
 
 -- Bind all key numbers to tags.
---
--- Be careful: we use keycodes to make it works on any keyboard layout. This
+-- Be careful: we use keycodes to make it work on any keyboard layout. This
 -- should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 9 do
   globalkeys = awful.util.table.join(globalkeys,
-    awful.key({ modkey }, "#" .. i + 9,
-      function()
-        local screen = mouse.screen
-        local tag = awful.tag.gettags(screen)[i]
+    -- View tag only.
+    awful.key({modkey}, "#" .. i + 9, function()
+        local screen = awful.screen.focused()
+        local tag = screen.tags[i]
         if tag then
-          awful.tag.viewonly(tag)
+          tag:view_only()
         end
-      end
+      end,
+      {description = "view tag #"..i, group = "tag"}
     ),
-    awful.key({ modkey, "Control" }, "#" .. i + 9,
-      function()
-        local screen = mouse.screen
-        local tag = awful.tag.gettags(screen)[i]
+    -- Toggle tag display.
+    awful.key({modkey, "Control"}, "#" .. i + 9, function()
+        local screen = awful.screen.focused()
+        local tag = screen.tags[i]
         if tag then
           awful.tag.viewtoggle(tag)
         end
-      end
+      end,
+      {description = "toggle tag #" .. i, group = "tag"}
     ),
-    awful.key({ modkey, "Shift" }, "#" .. i + 9,
-      function()
-        local tag = awful.tag.gettags(client.focus.screen)[i]
-        if client.focus and tag then
-          awful.client.movetotag(tag)
+    -- Move client to tag.
+    awful.key({modkey, "Shift"}, "#" .. i + 9, function()
+        if client.focus then
+          local tag = client.focus.screen.tags[i]
+          if tag then
+            client.focus:move_to_tag(tag)
+          end
         end
-      end
+      end,
+      {description = "move focused client to tag #"..i, group = "tag"}
     ),
-    awful.key({modkey, "Control", "Shift"}, "#" .. i + 9,
-      function()
-        local tag = awful.tag.gettags(client.focus.screen)[i]
-        if client.focus and tag then
-          awful.client.toggletag(tag)
+    -- Toggle tag on focused client.
+    awful.key({modkey, "Control", "Shift"}, "#" .. i + 9, function()
+        if client.focus then
+          local tag = client.focus.screen.tags[i]
+          if tag then
+            client.focus:toggle_tag(tag)
+          end
         end
-      end
+      end,
+      {description = "toggle focused client on tag #" .. i, group = "tag"}
     )
   )
 end
@@ -473,18 +480,16 @@ local clientbuttons = awful.util.table.join(
 
 -- Set keys
 root.keys(globalkeys)
--- }}}
 
--- {{{ Rules
+-- Rules
 awful.rules.rules = {
-
   -- All clients will match this rule.
   {
     rule = {},
     properties = {
       border_width = beautiful.border_width,
       border_color = beautiful.border_normal,
-      focus = true,
+      focus = awful.client.focus.filter,
       keys = clientkeys,
       buttons = clientbuttons,
       screen = awful.screen.preferred,
@@ -492,7 +497,6 @@ awful.rules.rules = {
     }
   }
 }
--- }}}
 
 -- Signal function to execute when a new client appears
 client.connect_signal("manage", function (c)
