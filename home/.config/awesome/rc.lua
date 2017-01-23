@@ -486,7 +486,9 @@ awful.rules.rules = {
       border_color = beautiful.border_normal,
       focus = true,
       keys = clientkeys,
-      buttons = clientbuttons
+      buttons = clientbuttons,
+      screen = awful.screen.preferred,
+      placment = awful.placement.no_overlap + awful.placement.no_offscreen
     }
   }
 }
