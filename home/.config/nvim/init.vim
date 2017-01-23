@@ -10,6 +10,7 @@ let s:plugins = [
   \ ['vim-easymotion', {'on_map': '<Plug>(easymotion-prefix)'}],
   \ ['vim-javascript', {'on_ft': ['javascript']}],
   \ ['vim-jsx'],
+  \ ['vim-racer', {'on_ft': 'rust'}],
   \ ]
 
 set runtimepath+=~/.config/nvim/bundle/dein.vim
@@ -110,6 +111,8 @@ let g:tern_show_signature_in_pum = 1
 let g:deoplete#sources#ternjs#tern_bin = 'tern'
 
 let g:jsx_ext_required = 0
+
+let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 
 let g:base16_shell_path = '~/.config/base16-shell/scripts'
 set background=dark
