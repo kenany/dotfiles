@@ -180,22 +180,12 @@ local mpdwidget = lain.widgets.mpd({
 })
 
 -- clock and date
-local mytextclock = lain.widgets.abase({
-  cmd = "date +'%I:%M %p - %Y-%m-%d (%A)'",
-  settings = function()
-    local t_output = ""
-    local o_it = string.gmatch(output, "%S+")
-
-    for i = 1, 3 do
-      t_output = t_output .. " " .. o_it(i)
-    end
-
-    widget:set_markup(markup("#d0d0d0", output))
-  end
-})
+local mytextclock = wibox.widget.textclock(" %I:%M %p - %Y-%m-%d (%A) ")
 
 -- display calendar when hovering over date
-lain.widgets.calendar.attach(mytextclock, {font_size = 10})
+lain.widgets.calendar({
+  attach_to = {mytextclock}
+})
 
 local taglist_buttons = awful.util.table.join(
   awful.button({}, 1, function(t) t:view_only() end),
@@ -282,41 +272,25 @@ awful.screen.connect_for_each_screen(function(s)
   -- Create the top wibox.
   s.mywibox = awful.wibar({ position = "top", screen = s })
 
-  -- Widgets that are aligned to the left.
-  local left_layout = wibox.layout.fixed.horizontal()
-  left_layout:add(s.mytaglist)
-  left_layout:add(s.mypromptbox)
-
-  -- Widgets that are aligned to the right.
-  local right_layout = wibox.layout.fixed.horizontal()
-  right_layout:add(space)
-  right_layout:add(mpdwidget)
-  right_layout:add(cpuwidget)
-  right_layout:add(brightnessWidget)
-  right_layout:add(batteryWidget)
-  right_layout:add(mytextclock)
-  right_layout:add(s.mylayoutbox)
-
-  -- Now bring it all together (with the tasklist in the middle).
-  local layout = wibox.layout.align.horizontal()
-  layout:set_left(left_layout)
-  layout:set_middle(s.mytasklist)
-  layout:set_right(right_layout)
-
-  s.mywibox:set_widget(layout)
-
-  -- Create the bottom wibox
-  s.mywibox = awful.wibox({position = "bottom", screen = s})
-
-  -- Widgets that are aligned to the right.
-  local right_layout = wibox.layout.fixed.horizontal()
-  if s == 1 then right_layout:add(wibox.widget.systray()) end
-
-  -- Now bring it all together.
-  local layout = wibox.layout.align.horizontal()
-  layout:set_right(right_layout)
-
-  s.mywibox:set_widget(layout)
+  s.mywibox:setup {
+    layout = wibox.layout.align.horizontal,
+    {
+      layout = wibox.layout.align.horizontal,
+      s.mytaglist,
+      s.mypromptbox
+    },
+    s.mytasklist,
+    {
+      layout = wibox.layout.fixed.horizontal,
+      wibox.widget.systray(),
+      mpdwidget.widget,
+      cpuwidget,
+      brightnessWidget,
+      batterWidget,
+      mytextclock,
+      s.mylayoutbox
+    }
+  }
 end)
 
 -- Mouse bindings
