@@ -27,6 +27,8 @@ export CCACHE_SLOPPINESS=time_macros
 
 export GOPATH=~/go
 
+export GPG_TTY=$(tty)
+
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="/usr/lib/ccache/bin/:$PATH"
