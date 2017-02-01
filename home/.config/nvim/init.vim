@@ -1,4 +1,5 @@
 let s:plugins = [
+  \ ['ale'],
   \ ['dein.vim'],
   \ ['base16-vim'],
   \ ['ctrlp.vim'],
