@@ -96,13 +96,11 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
-
-let g:deoplete#sources={}
-let g:deoplete#sources._    = ['buffer', 'file']
-let g:deoplete#sources.vim  = ['buffer', 'member', 'file']
-let g:deoplete#sources['javascript.jsx'] = ['buffer', 'file', 'ternjs']
-let g:deoplete#sources.css  = ['buffer', 'member', 'file', 'omni']
-let g:deoplete#sources.html = ['buffer', 'member', 'file', 'omni']
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#max_abbr_width = 0
+let g:deoplete#max_menu_width = 0
 
 " Be case-sensitive when an uppercase character is used.
 let g:deoplete#enable_camel_case = 1
