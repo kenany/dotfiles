@@ -115,5 +115,10 @@ let g:racer_cmd = $HOME.'/.cargo/bin/racer'
 
 let g:base16_shell_path = '~/.config/base16-shell/scripts'
 set background=dark
+
+if &term == "screen"
+  set t_Co=256
+endif
+
 let base16colorspace=256
 colorscheme base16-brewer
