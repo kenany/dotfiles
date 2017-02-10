@@ -75,6 +75,7 @@ local layouts = {
 
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/kenan/.config/awesome/theme.lua")
+local theme = beautiful.get();
 
 -- Wallpaper
 local function set_wallpaper(s)
@@ -156,26 +157,26 @@ local cpuwidget = lain.widget.cpu({
 })
 
 -- mpd
+local mpdicon = wibox.widget.imagebox()
 local mpdwidget = lain.widget.mpd({
   settings = function()
-    mpd_notification_preset = {
-      text = string.format("%s [%s] - %s\n%s", mpd_now.artist, mpd_now.album,
-        mpd_now.date, mpd_now.title)
-    }
-
-    local artist, title
     if mpd_now.state == "play" then
-      artist = mpd_now.artist .. " > "
-      title  = mpd_now.title .. " "
+      title = mpd_now.title
+      artist  = " " .. mpd_now.artist  .. markup("#333333", " <span> </span>|<span> </span>")
+      mpdicon:set_image(theme.play)
     elseif mpd_now.state == "pause" then
-      artist = "mpd "
-      title  = "paused "
+      title = "mpd "
+      artist  = "paused" .. markup("#333333", " |<span> </span>")
+      mpdicon:set_image(theme.pause)
     else
-      artist = ""
       title  = ""
+      artist = ""
+      mpdicon._private.image = nil
+      mpdicon:emit_signal("widget::redraw_needed")
+      mpdicon:emit_signal("widget::layout_changed")
     end
 
-    widget:set_markup(markup("#e54c62", artist) .. markup("#b2b2b2", title))
+    widget:set_markup(markup.font(theme.font, markup(theme.base0D, title) .. artist))
   end
 })
 
@@ -186,6 +187,9 @@ local mytextclock = wibox.widget.textclock(" %I:%M %p - %Y-%m-%d (%A) ")
 lain.widget.calendar({
   attach_to = {mytextclock}
 })
+
+local sep  = wibox.widget.textbox(" "
+  .. markup.fontfg(theme.font, "#333333", "|") .. " ")
 
 local taglist_buttons = awful.util.table.join(
   awful.button({}, 1, function(t) t:view_only() end),
@@ -283,10 +287,14 @@ awful.screen.connect_for_each_screen(function(s)
     {
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
+      sep,
       mpdwidget.widget,
       cpuwidget,
+      sep,
       brightnessWidget,
+      sep,
       batteryWidget,
+      sep,
       mytextclock,
       s.mylayoutbox
     }

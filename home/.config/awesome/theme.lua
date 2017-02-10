@@ -15,7 +15,7 @@ theme.base09 = "#eda987"
 theme.base0A = "#ddb26f"
 theme.base0B = "#acc267"
 theme.base0C = "#12cfc0"
-theme.base0D = "#6fc2ef"
+theme.base0D = "#3182bd"
 theme.base0E = "#e1a3ee"
 theme.base0F = "#deaf8f"
 
