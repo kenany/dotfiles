@@ -131,7 +131,7 @@ space:set_text("  ")
 
 -- batteries
 local markup = lain.util.markup
-local batteryWidget = lain.widgets.bat({
+local batteryWidget = lain.widget.bat({
   batteries = {"BAT0", "BAT1"},
   settings = function()
     widget:set_markup(markup("#d0d0d0", "&#xf240; " .. bat_now.n_perc[1] .. "% "
@@ -140,7 +140,7 @@ local batteryWidget = lain.widgets.bat({
 })
 
 -- brightness
-local brightnessWidget = lain.widgets.abase({
+local brightnessWidget = lain.widget.watch({
   cmd = "xbacklight",
   settings = function()
     widget:set_markup(markup("#d0d0d0", "☀ "
@@ -149,14 +149,14 @@ local brightnessWidget = lain.widgets.abase({
 })
 
 -- cpu
-local cpuwidget = lain.widgets.cpu({
+local cpuwidget = lain.widget.cpu({
   settings = function()
     widget:set_markup(markup("#d0d0d0", "&#xf0e4; " .. cpu_now.usage .. "% "))
   end
 })
 
 -- mpd
-local mpdwidget = lain.widgets.mpd({
+local mpdwidget = lain.widget.mpd({
   settings = function()
     mpd_notification_preset = {
       text = string.format("%s [%s] - %s\n%s", mpd_now.artist, mpd_now.album,
@@ -183,7 +183,7 @@ local mpdwidget = lain.widgets.mpd({
 local mytextclock = wibox.widget.textclock(" %I:%M %p - %Y-%m-%d (%A) ")
 
 -- display calendar when hovering over date
-lain.widgets.calendar({
+lain.widget.calendar({
   attach_to = {mytextclock}
 })
 
