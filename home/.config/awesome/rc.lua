@@ -1,3 +1,5 @@
+-- luacheck: globals awesome screen
+
 local gears = require("gears")
 
 -- Widgets
