@@ -46,3 +46,6 @@
 [submodule "home/.config/nvim/bundle/ale"]
 	path = home/.config/nvim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "home/.config/nvim/bundle/vim-toml"]
+	path = home/.config/nvim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git

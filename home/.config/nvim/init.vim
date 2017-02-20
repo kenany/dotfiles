@@ -12,6 +12,7 @@ let s:plugins = [
   \ ['vim-javascript', {'on_ft': ['javascript']}],
   \ ['vim-jsx'],
   \ ['vim-racer', {'on_ft': 'rust'}],
+  \ ['vim-toml'],
   \ ]
 
 set runtimepath+=~/.config/nvim/bundle/dein.vim
