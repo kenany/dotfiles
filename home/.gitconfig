@@ -2,6 +2,7 @@
     a = add
     c = commit -S
     m = checkout master
+    pf = push --force-with-lease
     s = status -s
     tags = tag -l
     branches = branch -a
