@@ -83,4 +83,7 @@ theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 theme.lain_icons = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
 theme.layout_centerwork = theme.lain_icons .. "centerworkw.png"
 
+theme.tasklist_fg_focus = theme.base05
+theme.tasklist_fg_minimize = theme.base03
+
 return theme
