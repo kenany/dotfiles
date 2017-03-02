@@ -103,6 +103,7 @@ let g:deoplete#enable_smart_case = 1
 let g:deoplete#enable_refresh_always = 1
 let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
+let g:deoplete#auto_complete_delay = 150
 
 " Be case-sensitive when an uppercase character is used.
 let g:deoplete#enable_camel_case = 1
