@@ -3,7 +3,11 @@ let s:plugins = [
   \ ['dein.vim'],
   \ ['base16-vim'],
   \ ['ctrlp.vim'],
-  \ ['deoplete.nvim', {'on_i': 1}],
+  \ ['deoplete.nvim', {
+  \   'on_i': 1,
+  \   'hook_source': 'source ' . expand('~/.config/nvim/deoplete.vim')
+  \ }],
+  \ ['deoplete-clang2'],
   \ ['deoplete-ternjs'],
   \ ['neoinclude.vim', {'on_i': 1}],
   \ ['rust.vim', {'merged': 1}],
@@ -95,18 +99,6 @@ let g:ctrlp_use_caching = 0
 " for them (use `:CheckHealth` to verify)
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
-
-" Enable deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-let g:deoplete#auto_complete_delay = 150
-
-" Be case-sensitive when an uppercase character is used.
-let g:deoplete#enable_camel_case = 1
 
 let g:tern_show_signature_in_pum = 1
 let g:deoplete#sources#ternjs#tern_bin = 'tern'
