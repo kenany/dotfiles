@@ -143,13 +143,12 @@ local batteryWidget = lain.widget.bat({
 })
 
 -- brightness
-local brightnessWidget = lain.widget.watch({
-  cmd = "xbacklight",
-  settings = function()
-    widget:set_markup(markup("#d0d0d0", "☀ "
-      .. math.floor(tonumber(output)) .. "% "))
+local brightnessWidget = awful.widget.watch('xbacklight', 5,
+  function(widget, stdout)
+    widget:set_markup(markup("#d0d0d0", "☀ " .. math.floor(tonumber(stdout))
+      .. "% "))
   end
-})
+)
 
 -- cpu
 local cpuwidget = lain.widget.cpu({
