@@ -103,6 +103,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:tern_show_signature_in_pum = 1
 let g:deoplete#sources#ternjs#tern_bin = 'tern'
 
+let g:javascript_plugin_flow = 1
+
 let g:jsx_ext_required = 0
 
 let g:racer_cmd = $HOME.'/.cargo/bin/racer'
