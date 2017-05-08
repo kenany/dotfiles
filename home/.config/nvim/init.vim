@@ -52,6 +52,9 @@ set ruler
 " Do not wrap long lines
 set nowrap
 
+" Enable the mouse in all modes
+set mouse=a
+
 " Lowercase searches will be case-insensitive but searches containing an
 " uppercase character will be case-sensitive
 set ignorecase
