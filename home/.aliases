@@ -16,9 +16,6 @@ alias sudo='sudo '
 # Gzip-enabled `curl`
 alias gurl='curl --compressed'
 
-# Get week number
-alias week='date +%V'
-
 alias screenshot='import ~/Pictures/Screenshots/$(date +%F_%H%M%S_%N).png'
 
 alias subl='subl3'
