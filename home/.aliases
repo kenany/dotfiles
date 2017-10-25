@@ -16,8 +16,6 @@ alias sudo='sudo '
 # Gzip-enabled `curl`
 alias gurl='curl --compressed'
 
-alias subl='subl3'
-
 # Always enable colored `grep` output
 alias grep='grep --color=auto'
 
