@@ -5,8 +5,9 @@ let g:deoplete#omni#input_patterns = get(g:, 'deoplete#omni#input_patterns', {})
 let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
 
 let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ternjs']
-let g:deoplete#omni#input_patterns.javascript = ['[^. \t0-9]\.\w*']
+let g:deoplete#ignore_sources.javascript = get(g:deoplete#ignore_sources, 'javascript', ['omni'])
+call deoplete#custom#set('ternjs', 'mark', 'tern')
+call deoplete#custom#set('ternjs', 'rank', 9999)
 
 let g:deoplete#omni_patterns.lua = '.'
 
