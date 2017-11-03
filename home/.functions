@@ -7,6 +7,15 @@ function manswitch() {
   man "$1" | less -p "^ +$2";
 }
 
+function pw() {
+  n=$1
+  if [ -z "$1" ]; then
+    # ~128 bits of entropy
+    n=22
+  fi
+  head -c 4096 /dev/urandom | tr -dc A-Za-z0-9 | head -c $n ; echo '';
+}
+
 fromhex() {
   hex=${1#"#"}
   r=$(printf '0x%0.2s' "$hex")
