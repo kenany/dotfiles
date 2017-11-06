@@ -52,3 +52,6 @@
 [submodule "home/.config/nvim/bundle/deoplete-clang2"]
 	path = home/.config/nvim/bundle/deoplete-clang2
 	url = https://github.com/tweekmonster/deoplete-clang2.git
+[submodule "home/.config/nvim/bundle/tern_for_vim"]
+	path = home/.config/nvim/bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
