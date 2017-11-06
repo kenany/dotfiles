@@ -4,8 +4,14 @@ let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#omni#input_patterns = get(g:, 'deoplete#omni#input_patterns', {})
 let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
 
+let g:deoplete#sources#ternjs#timeout = 3
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#docs = 1
+
+call deoplete#custom#source('_', 'min_pattern_length', 2)
+
 let g:deoplete#sources = {}
-let g:deoplete#ignore_sources.javascript = get(g:deoplete#ignore_sources, 'javascript', ['omni'])
+let g:deoplete#omni#input_patterns.javascript = ''
 call deoplete#custom#set('ternjs', 'mark', 'tern')
 call deoplete#custom#set('ternjs', 'rank', 9999)
 

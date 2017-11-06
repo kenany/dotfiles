@@ -5,12 +5,25 @@ let s:plugins = [
   \ ['ctrlp.vim'],
   \ ['deoplete.nvim', {
   \   'on_i': 1,
+  \   'hook_add': 'let g:deoplete#enable_at_startup = 1',
   \   'hook_source': 'source ' . expand('~/.config/nvim/deoplete.vim')
   \ }],
   \ ['deoplete-clang2'],
   \ ['deoplete-ternjs', {'on_ft': ['javascript', 'javascript.jsx']}],
   \ ['neoinclude.vim', {'on_i': 1}],
   \ ['rust.vim', {'merged': 1}],
+  \ ['tern_for_vim', {
+  \   'on_i': 1,
+  \   'on_ft': [ 'javascript', 'javascript.jsx' ],
+  \   'hook_add': "
+  \     let g:tern#command = ['tern']\n
+  \     let g:tern#arguments = ['--persistent']\n
+  \     let g:tern_request_timeout = 1\n
+  \     let g:tern_show_signature_in_pum = 0\n
+  \   ",
+  \   'hook_post_source': 'autocmd MyAutoCmd FileType javascript setlocal ' .
+  \                       'omnifunc=tern#Complete'
+  \ }],
   \ ['vim-airline'],
   \ ['vim-easymotion', {'on_map': '<Plug>(easymotion-prefix)'}],
   \ ['vim-javascript', {'on_ft': ['javascript', 'javascript.jsx']}],
@@ -42,6 +55,11 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
+augroup MyAutoCmd
+  autocmd!
+  autocmd CursorHold *? syntax sync minlines=300
+augroup END
 
 " Display line numbers
 set number
