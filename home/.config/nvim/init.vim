@@ -26,7 +26,10 @@ let s:plugins = [
   \ }],
   \ ['vim-airline'],
   \ ['vim-easymotion', {'on_map': '<Plug>(easymotion-prefix)'}],
-  \ ['vim-javascript', {'on_ft': ['javascript', 'javascript.jsx']}],
+  \ ['vim-javascript', {
+  \   'on_ft': ['javascript', 'javascript.jsx'],
+  \   'hook_source': 'source ' . expand('~/.config/nvim/vim-javascript.vim')
+  \ }],
   \ ['vim-jsx'],
   \ ['vim-racer', {'on_ft': 'rust'}],
   \ ['vim-toml'],
