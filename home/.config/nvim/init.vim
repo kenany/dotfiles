@@ -62,6 +62,10 @@ endif
 augroup MyAutoCmd
   autocmd!
   autocmd CursorHold *? syntax sync minlines=300
+
+  " Disable safe-writing for file types which webpack typically watches.
+  " See <https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write>
+  autocmd FileType html,css,javascript,jsx,javascript.jsx setlocal backupcopy=yes
 augroup END
 
 " Display line numbers
