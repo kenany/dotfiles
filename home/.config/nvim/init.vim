@@ -26,6 +26,9 @@ let s:plugins = [
   \ }],
   \ ['vim-airline'],
   \ ['vim-easymotion', {'on_map': '<Plug>(easymotion-prefix)'}],
+  \ ['vim-go', {
+  \   'on_ft': ['go']
+  \ }],
   \ ['vim-javascript', {
   \   'on_ft': ['javascript', 'javascript.jsx'],
   \   'hook_source': 'source ' . expand('~/.config/nvim/vim-javascript.vim')
@@ -66,6 +69,9 @@ augroup MyAutoCmd
   " Disable safe-writing for file types which webpack typically watches.
   " See <https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write>
   autocmd FileType html,css,javascript,jsx,javascript.jsx setlocal backupcopy=yes
+
+  autocmd FileType go highlight default link goErr WarningMsg |
+    \ match goErr /\<err\>/
 augroup END
 
 " Display line numbers
