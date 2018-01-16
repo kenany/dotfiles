@@ -9,6 +9,7 @@ let s:plugins = [
   \   'hook_source': 'source ' . expand('~/.config/nvim/deoplete.vim')
   \ }],
   \ ['deoplete-clang2'],
+  \ ['deoplete-go', {'build': 'make'}],
   \ ['deoplete-ternjs', {'on_ft': ['javascript', 'javascript.jsx']}],
   \ ['neoinclude.vim', {'on_i': 1}],
   \ ['rust.vim', {'merged': 1}],

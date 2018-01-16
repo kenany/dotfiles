@@ -58,3 +58,6 @@
 [submodule "home/.config/nvim/bundle/vim-go"]
 	path = home/.config/nvim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "home/.config/nvim/bundle/deoplete-go"]
+	path = home/.config/nvim/bundle/deoplete-go
+	url = https://github.com/zchee/deoplete-go.git
