@@ -185,7 +185,7 @@ local mpdwidget = lain.widget.mpd({
 local mytextclock = wibox.widget.textclock(" %I:%M %p - %Y-%m-%d (%A) ")
 
 -- display calendar when hovering over date
-lain.widget.calendar({
+lain.widget.cal({
   attach_to = {mytextclock}
 })
 
